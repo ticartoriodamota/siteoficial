@@ -4,48 +4,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       ELEMENTOS
+       HEADER
        ===================================================== */
 
     const header =
         document.querySelector(".header");
 
-    const menuButton =
-        document.querySelector(".menu-mobile");
-
-    const navbar =
-        document.querySelector(".navbar");
-
-    const searchInput =
-        document.querySelector(".search-box input");
-
-    const searchButton =
-        document.querySelector(".search-box button");
-
-    const cards =
-        document.querySelectorAll(".dashboard-card");
-
-
-    /* =====================================================
-       HEADER / SCROLL
-       
-       Acima de 70px:
-       header normal.
-
-       Depois de 70px:
-       header-top desaparece.
-       menu-bar sobe suavemente.
-       
-       IMPORTANTE:
-       não muda a altura do documento.
-       Isso elimina o tremor.
-       ===================================================== */
 
     function atualizarHeader() {
 
-        if (!header) {
-            return;
-        }
+        if (!header) return;
 
         if (window.scrollY > 70) {
 
@@ -72,23 +40,277 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     );
 
-
     atualizarHeader();
 
 
+
     /* =====================================================
-       MENU MOBILE
+       CRIA MENU MOBILE
        ===================================================== */
 
-    if (menuButton && navbar) {
+    const menuButton =
+        document.querySelector(".menu-mobile");
+
+    const navbar =
+        document.querySelector(".navbar");
+
+
+    if (
+        menuButton &&
+        navbar
+    ) {
+
+        criarMenuMobile();
+
+    }
+
+
+
+    function criarMenuMobile() {
+
+        /* Não cria duas vezes */
+
+        if (
+            document.querySelector(
+                ".mobile-menu"
+            )
+        ) {
+            return;
+        }
+
+
+        /* ================================================
+           OVERLAY
+           ================================================ */
+
+        const overlay =
+            document.createElement("div");
+
+        overlay.className =
+            "mobile-overlay";
+
+
+        /* ================================================
+           MENU
+           ================================================ */
+
+        const menu =
+            document.createElement("aside");
+
+        menu.className =
+            "mobile-menu";
+
+
+        /* ================================================
+           CABEÇALHO
+           ================================================ */
+
+        const menuHeader =
+            document.createElement("div");
+
+        menuHeader.className =
+            "mobile-menu-header";
+
+
+        menuHeader.innerHTML = `
+
+            <img
+                src="img/logo-branca.png"
+                alt="Cartório da Mota"
+            >
+
+            <button
+                class="mobile-menu-close"
+                type="button"
+                aria-label="Fechar menu"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        `;
+
+
+        /* ================================================
+           LISTA
+           ================================================ */
+
+        const lista =
+            document.createElement("ul");
+
+
+        navbar
+            .querySelectorAll("a")
+            .forEach((link) => {
+
+                const li =
+                    document.createElement("li");
+
+                const novoLink =
+                    document.createElement("a");
+
+
+                novoLink.href =
+                    link.getAttribute("href") || "#";
+
+
+                /* Pega o ícone */
+
+                const icon =
+                    link.querySelector("i");
+
+
+                if (icon) {
+
+                    const novoIcon =
+                        icon.cloneNode(true);
+
+                    novoLink.appendChild(
+                        novoIcon
+                    );
+
+                }
+
+
+                /* Pega o texto */
+
+                const texto =
+                    link.textContent.trim();
+
+
+                const span =
+                    document.createElement("span");
+
+                span.textContent =
+                    texto;
+
+
+                novoLink.appendChild(
+                    span
+                );
+
+
+                li.appendChild(
+                    novoLink
+                );
+
+
+                lista.appendChild(
+                    li
+                );
+
+            });
+
+
+        /* ================================================
+           MONTA MENU
+           ================================================ */
+
+        menu.appendChild(
+            menuHeader
+        );
+
+        menu.appendChild(
+            lista
+        );
+
+
+        document.body.appendChild(
+            overlay
+        );
+
+        document.body.appendChild(
+            menu
+        );
+
+
+        /* ================================================
+           ABRIR
+           ================================================ */
 
         menuButton.addEventListener(
             "click",
             () => {
 
-                navbar.classList.toggle(
-                    "mobile-open"
+                menu.classList.add(
+                    "active"
                 );
+
+                overlay.classList.add(
+                    "active"
+                );
+
+                document.body.style.overflow =
+                    "hidden";
+
+            }
+        );
+
+
+        /* ================================================
+           FECHAR
+           ================================================ */
+
+        function fecharMenu() {
+
+            menu.classList.remove(
+                "active"
+            );
+
+            overlay.classList.remove(
+                "active"
+            );
+
+            document.body.style.overflow =
+                "";
+
+        }
+
+
+        const fechar =
+            menu.querySelector(
+                ".mobile-menu-close"
+            );
+
+
+        fechar.addEventListener(
+            "click",
+            fecharMenu
+        );
+
+
+        overlay.addEventListener(
+            "click",
+            fecharMenu
+        );
+
+
+        /* Fecha depois de clicar */
+
+        menu
+            .querySelectorAll("a")
+            .forEach((link) => {
+
+                link.addEventListener(
+                    "click",
+                    fecharMenu
+                );
+
+            });
+
+
+        /* ESC */
+
+        document.addEventListener(
+            "keydown",
+            (event) => {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    fecharMenu();
+
+                }
 
             }
         );
@@ -96,15 +318,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
+
     /* =====================================================
-       PESQUISA DO PORTAL
+       PESQUISA
        ===================================================== */
+
+    const searchInput =
+        document.querySelector(
+            ".search-box input"
+        );
+
+    const searchButton =
+        document.querySelector(
+            ".search-box button"
+        );
+
+    const cards =
+        document.querySelectorAll(
+            ".dashboard-card"
+        );
+
 
     function pesquisar() {
 
-        if (!searchInput) {
-            return;
-        }
+        if (!searchInput) return;
 
 
         const termo =
@@ -113,53 +350,31 @@ document.addEventListener("DOMContentLoaded", () => {
                 .toLowerCase();
 
 
-        /* Se estiver vazio, mostra tudo */
+        cards.forEach((card) => {
 
-        if (termo === "") {
-
-            cards.forEach(
-                (card) => {
-
-                    card.style.display = "";
-
-                }
-            );
-
-            return;
-        }
+            const texto =
+                card.textContent
+                    .toLowerCase();
 
 
-        /* Filtra os cards */
+            if (
+                termo === "" ||
+                texto.includes(termo)
+            ) {
 
-        cards.forEach(
-            (card) => {
+                card.style.display = "";
 
-                const texto =
-                    card.textContent
-                        .toLowerCase();
+            } else {
 
-
-                if (
-                    texto.includes(termo)
-                ) {
-
-                    card.style.display = "";
-
-                } else {
-
-                    card.style.display = "none";
-
-                }
+                card.style.display =
+                    "none";
 
             }
-        );
+
+        });
 
     }
 
-
-    /* =====================================================
-       BOTÃO DA PESQUISA
-       ===================================================== */
 
     if (searchButton) {
 
@@ -170,10 +385,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-
-    /* =====================================================
-       ENTER NA PESQUISA
-       ===================================================== */
 
     if (searchInput) {
 
@@ -192,49 +403,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
 
-                /* ESC limpa */
-
                 if (
                     event.key === "Escape"
                 ) {
 
-                    searchInput.value = "";
+                    searchInput.value =
+                        "";
 
-                    cards.forEach(
-                        (card) => {
-
-                            card.style.display =
-                                "";
-
-                        }
-                    );
-
-                }
-
-            }
-        );
-
-
-        /* Se apagar a pesquisa,
-           mostra todos novamente */
-
-        searchInput.addEventListener(
-            "input",
-            () => {
-
-                if (
-                    searchInput.value
-                        .trim() === ""
-                ) {
-
-                    cards.forEach(
-                        (card) => {
-
-                            card.style.display =
-                                "";
-
-                        }
-                    );
+                    pesquisar();
 
                 }
 
@@ -242,59 +418,5 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
     }
-
-
-    /* =====================================================
-       LINKS DO MENU
-       ===================================================== */
-
-    if (navbar) {
-
-        navbar
-            .querySelectorAll("a")
-            .forEach(
-                (link) => {
-
-                    link.addEventListener(
-                        "click",
-                        () => {
-
-                            navbar.classList.remove(
-                                "mobile-open"
-                            );
-
-                        }
-                    );
-
-                }
-            );
-
-    }
-
-
-    /* =====================================================
-       ESC
-       ===================================================== */
-
-    document.addEventListener(
-        "keydown",
-        (event) => {
-
-            if (
-                event.key === "Escape"
-            ) {
-
-                if (navbar) {
-
-                    navbar.classList.remove(
-                        "mobile-open"
-                    );
-
-                }
-
-            }
-
-        }
-    );
 
 });
