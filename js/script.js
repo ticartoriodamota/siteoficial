@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
        HEADER / SCROLL
@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             header.classList.remove("is-scrolled");
         }
-
     }
 
     window.addEventListener(
@@ -31,163 +30,244 @@ document.addEventListener("DOMContentLoaded", function () {
        MENU MOBILE
        ===================================================== */
 
-    const botaoMenu =
+    const menuButton =
         document.querySelector(".menu-mobile");
 
     const navbar =
         document.querySelector(".navbar");
 
-    if (!botaoMenu || !navbar) return;
-
-
-    /* Cria menu */
-
-    const menu =
-        document.createElement("div");
-
-    menu.className = "mobile-menu";
-
-
-    /* Overlay */
-
-    const overlay =
-        document.createElement("div");
-
-    overlay.className =
-        "mobile-overlay";
-
-
-    /* Cabeçalho */
-
-    const headerMenu =
-        document.createElement("div");
-
-    headerMenu.className =
-        "mobile-menu-header";
-
-    headerMenu.innerHTML = `
-        <img
-            src="img/logo-branca.png"
-            alt="Cartório da Mota"
-        >
-
-        <button
-            class="mobile-menu-close"
-            type="button"
-        >
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-    `;
-
-
-    /* Lista */
-
-    const lista =
-        document.createElement("ul");
-
-
-    navbar
-        .querySelectorAll("a")
-        .forEach(function (link) {
-
-            const item =
-                document.createElement("li");
-
-            const novoLink =
-                document.createElement("a");
-
-
-            novoLink.href =
-                link.getAttribute("href") || "#";
-
-
-            /* Ícone */
-
-            const icone =
-                link.querySelector("i");
-
-            if (icone) {
-
-                novoLink.appendChild(
-                    icone.cloneNode(true)
-                );
-
-            }
-
-
-            /* Texto */
-
-            const texto =
-                document.createElement("span");
-
-            texto.textContent =
-                link.textContent.trim();
-
-            novoLink.appendChild(texto);
-
-
-            item.appendChild(novoLink);
-
-            lista.appendChild(item);
-
-        });
-
-
-    /* Monta */
-
-    menu.appendChild(headerMenu);
-
-    menu.appendChild(lista);
-
-    document.body.appendChild(overlay);
-
-    document.body.appendChild(menu);
+    if (!menuButton || !navbar) {
+        return;
+    }
 
 
     /* =====================================================
-       ABRIR
+       EVITA CRIAR O MENU DUAS VEZES
        ===================================================== */
 
-    botaoMenu.addEventListener(
-        "click",
-        function () {
+    let menu =
+        document.querySelector(".mobile-menu");
 
-            menu.classList.add("active");
-
-            overlay.classList.add("active");
-
-            document.body.style.overflow =
-                "hidden";
-
-        }
-    );
+    let overlay =
+        document.querySelector(".mobile-overlay");
 
 
     /* =====================================================
-       FECHAR
+       CRIA MENU
+       ===================================================== */
+
+    if (!menu) {
+
+        menu =
+            document.createElement("aside");
+
+        menu.className =
+            "mobile-menu";
+
+
+        /* -----------------------------------------------
+           OVERLAY
+           ----------------------------------------------- */
+
+        overlay =
+            document.createElement("div");
+
+        overlay.className =
+            "mobile-overlay";
+
+
+        /* -----------------------------------------------
+           CABEÇALHO
+           ----------------------------------------------- */
+
+        const menuHeader =
+            document.createElement("div");
+
+        menuHeader.className =
+            "mobile-menu-header";
+
+
+        menuHeader.innerHTML = `
+            <img
+                src="img/logo-branca.png"
+                alt="Cartório da Mota"
+            >
+
+            <button
+                class="mobile-menu-close"
+                type="button"
+                aria-label="Fechar menu"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        `;
+
+
+        /* -----------------------------------------------
+           LISTA
+           ----------------------------------------------- */
+
+        const lista =
+            document.createElement("ul");
+
+
+        navbar
+            .querySelectorAll("a")
+            .forEach((link) => {
+
+                const li =
+                    document.createElement("li");
+
+
+                const novoLink =
+                    document.createElement("a");
+
+
+                novoLink.href =
+                    link.getAttribute("href") || "#";
+
+
+                /*
+                 * Copia o ícone original
+                 */
+
+                const icon =
+                    link.querySelector("i");
+
+
+                if (icon) {
+
+                    novoLink.appendChild(
+                        icon.cloneNode(true)
+                    );
+
+                }
+
+
+                /*
+                 * Texto
+                 */
+
+                const texto =
+                    document.createElement("span");
+
+
+                texto.textContent =
+                    link.textContent.trim();
+
+
+                novoLink.appendChild(
+                    texto
+                );
+
+
+                li.appendChild(
+                    novoLink
+                );
+
+
+                lista.appendChild(
+                    li
+                );
+
+            });
+
+
+        /* -----------------------------------------------
+           MONTA MENU
+           ----------------------------------------------- */
+
+        menu.appendChild(
+            menuHeader
+        );
+
+        menu.appendChild(
+            lista
+        );
+
+
+        document.body.appendChild(
+            overlay
+        );
+
+        document.body.appendChild(
+            menu
+        );
+
+    }
+
+
+    /* =====================================================
+       FUNÇÃO ABRIR
+       ===================================================== */
+
+    function abrirMenu() {
+
+        menu.classList.add(
+            "active"
+        );
+
+        overlay.classList.add(
+            "active"
+        );
+
+        document.body.style.overflow =
+            "hidden";
+    }
+
+
+    /* =====================================================
+       FUNÇÃO FECHAR
        ===================================================== */
 
     function fecharMenu() {
 
-        menu.classList.remove("active");
+        menu.classList.remove(
+            "active"
+        );
 
-        overlay.classList.remove("active");
+        overlay.classList.remove(
+            "active"
+        );
 
-        document.body.style.overflow = "";
-
+        document.body.style.overflow =
+            "";
     }
 
+
+    /* =====================================================
+       BOTÃO MENU
+       ===================================================== */
+
+    menuButton.addEventListener(
+        "click",
+        abrirMenu
+    );
+
+
+    /* =====================================================
+       BOTÃO FECHAR
+       ===================================================== */
 
     const botaoFechar =
         menu.querySelector(
             ".mobile-menu-close"
         );
 
-    botaoFechar.addEventListener(
-        "click",
-        fecharMenu
-    );
 
+    if (botaoFechar) {
+
+        botaoFechar.addEventListener(
+            "click",
+            fecharMenu
+        );
+
+    }
+
+
+    /* =====================================================
+       CLICAR NO FUNDO
+       ===================================================== */
 
     overlay.addEventListener(
         "click",
@@ -195,9 +275,13 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
+    /* =====================================================
+       CLICAR EM UM LINK
+       ===================================================== */
+
     menu
         .querySelectorAll("a")
-        .forEach(function (link) {
+        .forEach((link) => {
 
             link.addEventListener(
                 "click",
@@ -207,14 +291,42 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 
-    /* ESC */
+    /* =====================================================
+       TECLA ESC
+       ===================================================== */
 
     document.addEventListener(
         "keydown",
-        function (event) {
+        (event) => {
 
-            if (event.key === "Escape") {
+            if (
+                event.key === "Escape" &&
+                menu.classList.contains("active")
+            ) {
+
                 fecharMenu();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       FECHAR AUTOMATICAMENTE AO VOLTAR PARA DESKTOP
+       ===================================================== */
+
+    window.addEventListener(
+        "resize",
+        () => {
+
+            if (
+                window.innerWidth > 1050 &&
+                menu.classList.contains("active")
+            ) {
+
+                fecharMenu();
+
             }
 
         }
@@ -245,13 +357,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (!campoPesquisa) return;
 
+
         const termo =
             campoPesquisa.value
                 .trim()
                 .toLowerCase();
 
 
-        cards.forEach(function (card) {
+        cards.forEach((card) => {
 
             const texto =
                 card.textContent
@@ -263,7 +376,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 texto.includes(termo)
             ) {
 
-                card.style.display = "";
+                card.style.display =
+                    "";
 
             } else {
 
@@ -277,6 +391,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+    /* Botão pesquisar */
+
     if (botaoPesquisa) {
 
         botaoPesquisa.addEventListener(
@@ -287,13 +403,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+    /* Enter */
+
     if (campoPesquisa) {
 
         campoPesquisa.addEventListener(
             "keydown",
-            function (event) {
+            (event) => {
 
-                if (event.key === "Enter") {
+                if (
+                    event.key === "Enter"
+                ) {
 
                     event.preventDefault();
 
@@ -301,9 +421,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 }
 
-                if (event.key === "Escape") {
 
-                    campoPesquisa.value = "";
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    campoPesquisa.value =
+                        "";
 
                     pesquisar();
 
@@ -313,5 +437,27 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
     }
+
+
+    /* =====================================================
+       FECHAR MENU AO CLICAR EM LINK
+       ===================================================== */
+
+    document.addEventListener(
+        "click",
+        (event) => {
+
+            const link =
+                event.target.closest(
+                    ".mobile-menu a"
+                );
+
+
+            if (link) {
+                fecharMenu();
+            }
+
+        }
+    );
 
 });
