@@ -1491,347 +1491,293 @@ main {
     }
 
 }
-/* =====================================================
-   CORREÇÃO DA NAVBAR
-   ===================================================== */
-
-:root {
-    --nav-height: 52px;
-}
-
-/* Barra preta menor */
-.menu-bar {
-    height: 52px !important;
-}
-
-/* Links centralizados */
-.navbar {
-    height: 52px !important;
-}
-
-.navbar ul {
-    height: 52px !important;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 30px;
-}
-
-/* Links */
-.navbar li {
-    height: 52px !important;
-
-    display: flex;
-    align-items: center;
-}
-
-.navbar li a {
-    height: 52px !important;
-
-    display: flex;
-    align-items: center;
-
-    font-size: 14px;
-}
-
-/* Quando rolar */
-.header.is-scrolled .menu-bar {
-    height: 52px !important;
-
-    transform: translateY(
-        calc(-1 * var(--header-top))
-    );
-}
-@media (max-width: 700px) {
-
-    :root {
-        --nav-height: 48px;
-    }
-
-    .menu-bar,
-    .navbar,
-    .navbar ul,
-    .navbar li,
-    .navbar li a {
-        height: 48px !important;
-    }
-
-}
-/* ==========================================
-   CENTRALIZAR INFORMAÇÕES DO HERO
-   ========================================== */
-
-.hero-left {
-    grid-template-columns: 300px minmax(500px, 1fr);
-    gap: 45px;
-}
-
-.hero-content {
-    padding-top: 15px;
-    max-width: 650px;
-}
-
-/* Empurra o conteúdo um pouco para o centro */
-.hero-content {
-    transform: translateX(25px);
-}
-
-.hero-content h1 {
-    font-size: clamp(46px, 4.5vw, 64px);
-}
-
-/* Texto */
-.hero-content p {
-    max-width: 620px;
-}
-
-/* Botões */
-.hero-buttons {
-    margin-top: 28px;
-}
-
-/* Volta ao normal no celular */
-@media (max-width: 1050px) {
-
-    .hero-left {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-content {
-        transform: none;
-    }
-
-}
 /* =========================================================
-   NAVBAR RESPONSIVA PARA CELULAR
+   NAVBAR MOBILE
    ========================================================= */
 
+.menu-mobile {
+    display: none;
+}
+
+
+/* TABLET E CELULAR */
+
 @media (max-width: 1050px) {
 
-    /* Barra da navbar */
-    .menu-bar {
-        height: 58px !important;
+    .header-main {
+        grid-template-columns: 170px 1fr 46px;
     }
 
-    .navbar {
-        height: 58px !important;
-        display: flex;
-        align-items: center;
+    .header-buttons {
+        display: none;
     }
 
-    /* Esconde os links normais */
-    .navbar ul {
-        display: none !important;
-    }
-
-    /* Botão hamburger */
     .menu-mobile {
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
+        display: grid;
 
         width: 44px;
         height: 44px;
 
-        display: grid !important;
         place-items: center;
-
-        border: 0;
-        border-radius: 12px;
 
         background: #38ba5e;
         color: #050705;
 
-        font-size: 20px;
+        border-radius: 12px;
 
-        z-index: 10001;
+        font-size: 19px;
+
+        z-index: 100;
     }
 
-    .menu-mobile:hover {
-        background: #ffffff;
+    .menu-mobile i {
+        display: block;
     }
 
-}
 
+    /* NAVBAR NORMAL SOME NO CELULAR */
 
-/* =========================================================
-   MENU LATERAL MOBILE
-   ========================================================= */
+    .menu-bar {
+        height: 0;
+        overflow: hidden;
+    }
 
-.mobile-menu {
-    position: fixed;
+    .navbar {
+        display: none;
+    }
 
-    top: 0;
-    right: -330px;
 
-    width: 310px;
-    height: 100vh;
-
-    z-index: 20000;
-
-    padding: 25px 20px;
-
-    background: #050705;
-
-    box-shadow:
-        -15px 0 45px
-        rgba(0, 0, 0, 0.35);
-
-    transition: right 0.35s ease;
-
-    overflow-y: auto;
-}
-
-.mobile-menu.active {
-    right: 0;
-}
-
-
-/* Cabeçalho */
-
-.mobile-menu-header {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    padding-bottom: 22px;
-
-    border-bottom:
-        1px solid
-        rgba(255, 255, 255, 0.10);
-}
-
-.mobile-menu-header img {
-    width: 165px;
-}
-
-.mobile-menu-close {
-    width: 42px;
-    height: 42px;
-
-    display: grid;
-    place-items: center;
-
-    border-radius: 10px;
-
-    background:
-        rgba(255, 255, 255, 0.08);
-
-    color: #ffffff;
-
-    font-size: 18px;
-}
-
-
-/* Lista */
-
-.mobile-menu ul {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 5px;
-
-    margin-top: 25px;
-}
-
-.mobile-menu li {
-    width: 100%;
-}
-
-.mobile-menu a {
-    width: 100%;
-
-    min-height: 55px;
-
-    padding: 0 15px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 14px;
-
-    border-radius: 12px;
-
-    color: #ffffff;
-
-    font-size: 14px;
-
-    font-weight: 600;
-
-    transition: 0.25s ease;
-}
-
-.mobile-menu a i {
-    width: 25px;
-
-    color: #38ba5e;
-
-    font-size: 16px;
-
-    text-align: center;
-}
-
-.mobile-menu a:hover {
-    background:
-        rgba(56, 186, 94, 0.10);
-
-    color: #38ba5e;
-}
-
-
-/* =========================================================
-   FUNDO ESCURO ATRÁS DO MENU
-   ========================================================= */
-
-.mobile-overlay {
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 19999;
-
-    background:
-        rgba(0, 0, 0, 0.60);
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transition:
-        opacity 0.3s ease,
-        visibility 0.3s ease;
-}
-
-.mobile-overlay.active {
-    opacity: 1;
-
-    visibility: visible;
-}
-
-
-/* =========================================================
-   CELULAR PEQUENO
-   ========================================================= */
-
-@media (max-width: 500px) {
+    /* MENU MOBILE */
 
     .mobile-menu {
-        width: 285px;
+        position: fixed;
+
+        top: 0;
+        right: 0;
+
+        width: 300px;
+        max-width: 85vw;
+
+        height: 100vh;
+
+        padding: 25px 20px;
+
+        background: #050705;
+
+        z-index: 99999;
+
+        transform: translateX(100%);
+
+        transition: transform 0.3s ease;
+
+        box-shadow:
+            -15px 0 40px rgba(0,0,0,.35);
+    }
+
+    .mobile-menu.active {
+        transform: translateX(0);
+    }
+
+
+    /* CABEÇALHO DO MENU */
+
+    .mobile-menu-header {
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        padding-bottom: 20px;
+
+        border-bottom:
+            1px solid
+            rgba(255,255,255,.10);
     }
 
     .mobile-menu-header img {
-        width: 145px;
+        width: 150px;
+    }
+
+
+    /* BOTÃO FECHAR */
+
+    .mobile-menu-close {
+        width: 40px;
+        height: 40px;
+
+        display: grid;
+        place-items: center;
+
+        background:
+            rgba(255,255,255,.08);
+
+        color: #38ba5e;
+
+        border-radius: 10px;
+
+        font-size: 18px;
+    }
+
+
+    /* LISTA */
+
+    .mobile-menu ul {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 5px;
+
+        margin-top: 25px;
+    }
+
+    .mobile-menu li {
+        width: 100%;
+    }
+
+    .mobile-menu a {
+        width: 100%;
+
+        min-height: 54px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 14px;
+
+        padding: 0 14px;
+
+        color: #ffffff;
+
+        border-radius: 12px;
+
+        font-size: 14px;
+
+        font-weight: 600;
+
+        transition: .2s ease;
+    }
+
+    .mobile-menu a i {
+        width: 25px;
+
+        color: #38ba5e;
+
+        font-size: 16px;
+
+        text-align: center;
+    }
+
+    .mobile-menu a:hover {
+        background:
+            rgba(56,186,94,.10);
+
+        color: #38ba5e;
+    }
+
+
+    /* FUNDO */
+
+    .mobile-overlay {
+        position: fixed;
+
+        inset: 0;
+
+        background:
+            rgba(0,0,0,.60);
+
+        z-index: 99998;
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transition:
+            opacity .3s ease;
+    }
+
+    .mobile-overlay.active {
+        opacity: 1;
+
+        visibility: visible;
+    }
+
+}
+
+
+/* CELULAR */
+
+@media (max-width: 700px) {
+
+    :root {
+        --header-top: 75px;
+        --nav-height: 0px;
+    }
+
+    .header-main {
+        grid-template-columns:
+            115px
+            1fr
+            44px;
+
+        gap: 8px;
+    }
+
+    .logo img {
+        width: 115px;
+    }
+
+    .search-box {
+        height: 42px;
+    }
+
+    .search-box input {
+        font-size: 11px;
+
+        padding: 0 12px;
+    }
+
+    .search-box button {
+        width: 42px;
+        height: 42px;
     }
 
     .menu-mobile {
-        right: 14px;
+        width: 42px;
+        height: 42px;
+    }
+
+    main {
+        padding-top: var(--header-top);
+    }
+
+}
+
+
+/* CELULAR MUITO PEQUENO */
+
+@media (max-width: 420px) {
+
+    .header-main {
+        grid-template-columns:
+            100px
+            1fr
+            40px;
+    }
+
+    .logo img {
+        width: 100px;
+    }
+
+    .search-box input::placeholder {
+        color: transparent;
+    }
+
+    .menu-mobile {
+        width: 40px;
+        height: 40px;
     }
 
 }

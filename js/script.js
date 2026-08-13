@@ -1,334 +1,236 @@
-document.addEventListener("DOMContentLoaded", () => {
-
-    "use strict";
-
+document.addEventListener("DOMContentLoaded", function () {
 
     /* =====================================================
-       HEADER
+       HEADER / SCROLL
        ===================================================== */
 
-    const header =
-        document.querySelector(".header");
-
+    const header = document.querySelector(".header");
 
     function atualizarHeader() {
 
         if (!header) return;
 
         if (window.scrollY > 70) {
-
-            header.classList.add(
-                "is-scrolled"
-            );
-
+            header.classList.add("is-scrolled");
         } else {
-
-            header.classList.remove(
-                "is-scrolled"
-            );
-
+            header.classList.remove("is-scrolled");
         }
 
     }
 
-
     window.addEventListener(
         "scroll",
         atualizarHeader,
-        {
-            passive: true
-        }
+        { passive: true }
     );
 
     atualizarHeader();
 
 
-
     /* =====================================================
-       CRIA MENU MOBILE
+       MENU MOBILE
        ===================================================== */
 
-    const menuButton =
+    const botaoMenu =
         document.querySelector(".menu-mobile");
 
     const navbar =
         document.querySelector(".navbar");
 
-
-    if (
-        menuButton &&
-        navbar
-    ) {
-
-        criarMenuMobile();
-
-    }
+    if (!botaoMenu || !navbar) return;
 
 
+    /* Cria menu */
 
-    function criarMenuMobile() {
+    const menu =
+        document.createElement("div");
 
-        /* Não cria duas vezes */
-
-        if (
-            document.querySelector(
-                ".mobile-menu"
-            )
-        ) {
-            return;
-        }
+    menu.className = "mobile-menu";
 
 
-        /* ================================================
-           OVERLAY
-           ================================================ */
+    /* Overlay */
 
-        const overlay =
-            document.createElement("div");
+    const overlay =
+        document.createElement("div");
 
-        overlay.className =
-            "mobile-overlay";
+    overlay.className =
+        "mobile-overlay";
 
 
-        /* ================================================
-           MENU
-           ================================================ */
+    /* Cabeçalho */
 
-        const menu =
-            document.createElement("aside");
+    const headerMenu =
+        document.createElement("div");
 
-        menu.className =
-            "mobile-menu";
+    headerMenu.className =
+        "mobile-menu-header";
 
+    headerMenu.innerHTML = `
+        <img
+            src="img/logo-branca.png"
+            alt="Cartório da Mota"
+        >
 
-        /* ================================================
-           CABEÇALHO
-           ================================================ */
-
-        const menuHeader =
-            document.createElement("div");
-
-        menuHeader.className =
-            "mobile-menu-header";
-
-
-        menuHeader.innerHTML = `
-
-            <img
-                src="img/logo-branca.png"
-                alt="Cartório da Mota"
-            >
-
-            <button
-                class="mobile-menu-close"
-                type="button"
-                aria-label="Fechar menu"
-            >
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
-        `;
+        <button
+            class="mobile-menu-close"
+            type="button"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    `;
 
 
-        /* ================================================
-           LISTA
-           ================================================ */
+    /* Lista */
 
-        const lista =
-            document.createElement("ul");
+    const lista =
+        document.createElement("ul");
 
 
-        navbar
-            .querySelectorAll("a")
-            .forEach((link) => {
+    navbar
+        .querySelectorAll("a")
+        .forEach(function (link) {
 
-                const li =
-                    document.createElement("li");
+            const item =
+                document.createElement("li");
 
-                const novoLink =
-                    document.createElement("a");
-
-
-                novoLink.href =
-                    link.getAttribute("href") || "#";
+            const novoLink =
+                document.createElement("a");
 
 
-                /* Pega o ícone */
-
-                const icon =
-                    link.querySelector("i");
+            novoLink.href =
+                link.getAttribute("href") || "#";
 
 
-                if (icon) {
+            /* Ícone */
 
-                    const novoIcon =
-                        icon.cloneNode(true);
+            const icone =
+                link.querySelector("i");
 
-                    novoLink.appendChild(
-                        novoIcon
-                    );
-
-                }
-
-
-                /* Pega o texto */
-
-                const texto =
-                    link.textContent.trim();
-
-
-                const span =
-                    document.createElement("span");
-
-                span.textContent =
-                    texto;
-
+            if (icone) {
 
                 novoLink.appendChild(
-                    span
+                    icone.cloneNode(true)
                 );
-
-
-                li.appendChild(
-                    novoLink
-                );
-
-
-                lista.appendChild(
-                    li
-                );
-
-            });
-
-
-        /* ================================================
-           MONTA MENU
-           ================================================ */
-
-        menu.appendChild(
-            menuHeader
-        );
-
-        menu.appendChild(
-            lista
-        );
-
-
-        document.body.appendChild(
-            overlay
-        );
-
-        document.body.appendChild(
-            menu
-        );
-
-
-        /* ================================================
-           ABRIR
-           ================================================ */
-
-        menuButton.addEventListener(
-            "click",
-            () => {
-
-                menu.classList.add(
-                    "active"
-                );
-
-                overlay.classList.add(
-                    "active"
-                );
-
-                document.body.style.overflow =
-                    "hidden";
 
             }
-        );
 
 
-        /* ================================================
-           FECHAR
-           ================================================ */
+            /* Texto */
 
-        function fecharMenu() {
+            const texto =
+                document.createElement("span");
 
-            menu.classList.remove(
-                "active"
-            );
+            texto.textContent =
+                link.textContent.trim();
 
-            overlay.classList.remove(
-                "active"
-            );
+            novoLink.appendChild(texto);
+
+
+            item.appendChild(novoLink);
+
+            lista.appendChild(item);
+
+        });
+
+
+    /* Monta */
+
+    menu.appendChild(headerMenu);
+
+    menu.appendChild(lista);
+
+    document.body.appendChild(overlay);
+
+    document.body.appendChild(menu);
+
+
+    /* =====================================================
+       ABRIR
+       ===================================================== */
+
+    botaoMenu.addEventListener(
+        "click",
+        function () {
+
+            menu.classList.add("active");
+
+            overlay.classList.add("active");
 
             document.body.style.overflow =
-                "";
+                "hidden";
 
         }
+    );
 
 
-        const fechar =
-            menu.querySelector(
-                ".mobile-menu-close"
-            );
+    /* =====================================================
+       FECHAR
+       ===================================================== */
 
+    function fecharMenu() {
 
-        fechar.addEventListener(
-            "click",
-            fecharMenu
-        );
+        menu.classList.remove("active");
 
+        overlay.classList.remove("active");
 
-        overlay.addEventListener(
-            "click",
-            fecharMenu
-        );
-
-
-        /* Fecha depois de clicar */
-
-        menu
-            .querySelectorAll("a")
-            .forEach((link) => {
-
-                link.addEventListener(
-                    "click",
-                    fecharMenu
-                );
-
-            });
-
-
-        /* ESC */
-
-        document.addEventListener(
-            "keydown",
-            (event) => {
-
-                if (
-                    event.key === "Escape"
-                ) {
-
-                    fecharMenu();
-
-                }
-
-            }
-        );
+        document.body.style.overflow = "";
 
     }
 
+
+    const botaoFechar =
+        menu.querySelector(
+            ".mobile-menu-close"
+        );
+
+    botaoFechar.addEventListener(
+        "click",
+        fecharMenu
+    );
+
+
+    overlay.addEventListener(
+        "click",
+        fecharMenu
+    );
+
+
+    menu
+        .querySelectorAll("a")
+        .forEach(function (link) {
+
+            link.addEventListener(
+                "click",
+                fecharMenu
+            );
+
+        });
+
+
+    /* ESC */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key === "Escape") {
+                fecharMenu();
+            }
+
+        }
+    );
 
 
     /* =====================================================
        PESQUISA
        ===================================================== */
 
-    const searchInput =
+    const campoPesquisa =
         document.querySelector(
             ".search-box input"
         );
 
-    const searchButton =
+    const botaoPesquisa =
         document.querySelector(
             ".search-box button"
         );
@@ -341,16 +243,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function pesquisar() {
 
-        if (!searchInput) return;
-
+        if (!campoPesquisa) return;
 
         const termo =
-            searchInput.value
+            campoPesquisa.value
                 .trim()
                 .toLowerCase();
 
 
-        cards.forEach((card) => {
+        cards.forEach(function (card) {
 
             const texto =
                 card.textContent
@@ -376,9 +277,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    if (searchButton) {
+    if (botaoPesquisa) {
 
-        searchButton.addEventListener(
+        botaoPesquisa.addEventListener(
             "click",
             pesquisar
         );
@@ -386,15 +287,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    if (searchInput) {
+    if (campoPesquisa) {
 
-        searchInput.addEventListener(
+        campoPesquisa.addEventListener(
             "keydown",
-            (event) => {
+            function (event) {
 
-                if (
-                    event.key === "Enter"
-                ) {
+                if (event.key === "Enter") {
 
                     event.preventDefault();
 
@@ -402,13 +301,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 }
 
+                if (event.key === "Escape") {
 
-                if (
-                    event.key === "Escape"
-                ) {
-
-                    searchInput.value =
-                        "";
+                    campoPesquisa.value = "";
 
                     pesquisar();
 
