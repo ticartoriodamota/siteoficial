@@ -1,0 +1,1055 @@
+/* =========================================================
+   CARTÓRIO DA MOTA
+   HEADER UNIVERSAL DA MATRIZ
+   ========================================================= */
+
+:root {
+    --header-green: #38BA5E;
+    --header-green-dark: #249548;
+    --header-white: #FFFFFF;
+    --header-muted: rgba(255, 255, 255, 0.55);
+    --header-black: #030604;
+}
+
+
+/* =========================================================
+   CONTAINER DO COMPONENTE
+   ========================================================= */
+
+#site-header {
+    width: 100%;
+    position: relative;
+    z-index: 9999;
+}
+
+
+/* =========================================================
+   HEADER
+   SUPORTA AS DUAS VERSÕES DA MATRIZ
+   ========================================================= */
+
+#site-header > header,
+#site-header .header,
+#site-header .header-universal {
+
+    width: 100% !important;
+
+    min-height: 218px !important;
+
+    position: relative !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: space-between !important;
+
+    padding:
+        20px
+        clamp(30px, 6vw, 110px) !important;
+
+    margin: 0 !important;
+
+    color: #ffffff !important;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(56, 186, 94, 0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 8% 100%,
+            rgba(56, 186, 94, 0.05),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #020403 0%,
+            #050806 50%,
+            #020403 100%
+        ) !important;
+
+    border-top:
+        2px solid
+        var(--header-green) !important;
+
+    border-bottom:
+        1px solid
+        rgba(56, 186, 94, 0.18) !important;
+
+    box-sizing: border-box !important;
+
+    overflow: hidden !important;
+
+    isolation: isolate !important;
+}
+
+
+/* =========================================================
+   BRILHO DO HEADER
+   ========================================================= */
+
+#site-header > header::before,
+#site-header .header::before,
+#site-header .header-universal::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 460px;
+    height: 460px;
+
+    left: 50%;
+    top: -330px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(56, 186, 94, 0.16),
+            rgba(56, 186, 94, 0.04) 40%,
+            transparent 70%
+        );
+
+    filter: blur(10px);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   LINHA VERDE INFERIOR
+   ========================================================= */
+
+#site-header > header::after,
+#site-header .header::after,
+#site-header .header-universal::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(56, 186, 94, 0.15),
+            #38BA5E,
+            rgba(56, 186, 94, 0.15),
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   QUALQUER CONTAINER INTERNO DO HEADER
+   ========================================================= */
+
+#site-header .header-top {
+
+    width: min(1320px, 100%) !important;
+
+    min-height: 178px !important;
+
+    margin: 0 auto !important;
+
+    padding: 0 !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: space-between !important;
+
+    position: relative !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   CONTATOS
+   ========================================================= */
+
+#site-header .header-contact,
+#site-header .contact-item {
+
+    width: 270px !important;
+
+    min-width: 270px !important;
+
+    min-height: 80px !important;
+
+    padding: 10px 18px 10px 10px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    gap: 14px !important;
+
+    position: relative !important;
+
+    box-sizing: border-box !important;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08) !important;
+
+    border-radius: 17px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.012)
+        ) !important;
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.04),
+        0 12px 35px
+        rgba(0, 0, 0, 0.25) !important;
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+
+    z-index: 10 !important;
+}
+
+
+/* esquerda */
+
+#site-header .header-phone {
+
+    margin-right: auto !important;
+}
+
+
+/* direita */
+
+#site-header .header-whatsapp {
+
+    margin-left: auto !important;
+}
+
+
+/* =========================================================
+   ÍCONE DOS CONTATOS
+   ========================================================= */
+
+#site-header .header-contact-icon,
+#site-header .contact-item i {
+
+    width: 52px !important;
+
+    height: 52px !important;
+
+    min-width: 52px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    flex-shrink: 0 !important;
+
+    border-radius: 15px !important;
+
+    color:
+        #38BA5E !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(56, 186, 94, 0.16),
+            rgba(56, 186, 94, 0.035)
+        ) !important;
+
+    border:
+        1px solid
+        rgba(56, 186, 94, 0.25) !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* ícone Font Awesome */
+
+#site-header .header-contact-icon i {
+
+    color:
+        #38BA5E !important;
+
+    font-size: 19px !important;
+
+    width: auto !important;
+
+    height: auto !important;
+
+    min-width: 0 !important;
+
+    border: 0 !important;
+
+    background: transparent !important;
+}
+
+
+/* =========================================================
+   TEXTOS DOS CONTATOS
+   ========================================================= */
+
+#site-header .header-contact-text,
+#site-header .contact-item > div {
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    justify-content: center !important;
+
+    gap: 4px !important;
+
+    min-width: 0 !important;
+
+    background: transparent !important;
+}
+
+
+/* título */
+
+#site-header .header-contact-text span,
+#site-header .contact-item small {
+
+    display: block !important;
+
+    color:
+        rgba(255, 255, 255, 0.48) !important;
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif !important;
+
+    font-size: 9px !important;
+
+    line-height: 1 !important;
+
+    font-weight: 800 !important;
+
+    letter-spacing: 2px !important;
+
+    text-transform: uppercase !important;
+
+    white-space: nowrap !important;
+}
+
+
+/* número */
+
+#site-header .header-contact-text a,
+#site-header .contact-item strong {
+
+    display: block !important;
+
+    color:
+        #FFFFFF !important;
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif !important;
+
+    font-size: 15px !important;
+
+    line-height: 1.25 !important;
+
+    font-weight: 800 !important;
+
+    letter-spacing: 0 !important;
+
+    text-decoration: none !important;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    white-space: nowrap !important;
+
+    text-shadow:
+        0 1px 8px
+        rgba(0, 0, 0, 0.3) !important;
+}
+
+
+/* =========================================================
+   LOGO
+   PEGA AS DUAS VERSÕES
+   ========================================================= */
+
+#site-header .header-logo,
+#site-header .main-logo {
+
+    width: 350px !important;
+
+    height: 180px !important;
+
+    position: absolute !important;
+
+    left: 50% !important;
+
+    top: 50% !important;
+
+    transform:
+        translate(-50%, -50%) !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    z-index: 30 !important;
+
+    text-decoration: none !important;
+}
+
+
+/* =========================================================
+   LOGO IMAGEM
+   ========================================================= */
+
+#site-header .header-logo img,
+#site-header .main-logo img,
+#site-header img {
+
+    width: 285px !important;
+
+    height: 165px !important;
+
+    max-width: 285px !important;
+
+    max-height: 165px !important;
+
+    min-width: 0 !important;
+
+    min-height: 0 !important;
+
+    display: block !important;
+
+    object-fit: contain !important;
+
+    object-position: center !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    border: 0 !important;
+
+    background: transparent !important;
+
+    filter:
+        drop-shadow(
+            0 8px 18px
+            rgba(0, 0, 0, 0.55)
+        ) !important;
+}
+
+
+/* =========================================================
+   GARANTE QUE O LOGO NÃO VIRE GIGANTE
+   ========================================================= */
+
+#site-header > img {
+
+    width: 285px !important;
+
+    height: 165px !important;
+
+    max-width: 285px !important;
+
+    max-height: 165px !important;
+
+    object-fit: contain !important;
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+#site-header .header-contact:hover,
+#site-header .contact-item:hover {
+
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(56, 186, 94, 0.32) !important;
+}
+
+
+#site-header .header-logo:hover img,
+#site-header .main-logo:hover img {
+
+    transform: scale(1.035);
+
+    transition:
+        transform 0.35s ease;
+}
+
+
+/* =========================================================
+   DESKTOP GRANDE
+   ========================================================= */
+
+@media (min-width: 1400px) {
+
+    #site-header > header,
+    #site-header .header,
+    #site-header .header-universal {
+
+        min-height: 218px !important;
+    }
+
+    #site-header .header-contact,
+    #site-header .contact-item {
+
+        width: 272px !important;
+
+        min-width: 272px !important;
+    }
+
+    #site-header .header-logo,
+    #site-header .main-logo {
+
+        width: 350px !important;
+        height: 180px !important;
+    }
+
+    #site-header .header-logo img,
+    #site-header .main-logo img,
+    #site-header img {
+
+        width: 285px !important;
+        height: 165px !important;
+
+        max-width: 285px !important;
+        max-height: 165px !important;
+    }
+}
+
+
+/* =========================================================
+   NOTEBOOK
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    #site-header > header,
+    #site-header .header,
+    #site-header .header-universal {
+
+        min-height: 190px !important;
+
+        padding:
+            15px 30px !important;
+    }
+
+
+    #site-header .header-top {
+
+        min-height: 160px !important;
+    }
+
+
+    #site-header .header-contact,
+    #site-header .contact-item {
+
+        width: 225px !important;
+
+        min-width: 225px !important;
+
+        min-height: 72px !important;
+    }
+
+
+    #site-header .header-contact-icon,
+    #site-header .contact-item i {
+
+        width: 48px !important;
+
+        height: 48px !important;
+
+        min-width: 48px !important;
+    }
+
+
+    #site-header .header-contact-text a,
+    #site-header .contact-item strong {
+
+        font-size: 14px !important;
+    }
+
+
+    #site-header .header-logo,
+    #site-header .main-logo {
+
+        width: 300px !important;
+
+        height: 165px !important;
+    }
+
+
+    #site-header .header-logo img,
+    #site-header .main-logo img,
+    #site-header img {
+
+        width: 255px !important;
+
+        height: 150px !important;
+
+        max-width: 255px !important;
+
+        max-height: 150px !important;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    #site-header > header,
+    #site-header .header,
+    #site-header .header-universal {
+
+        min-height: 165px !important;
+
+        padding:
+            12px 18px !important;
+    }
+
+
+    #site-header .header-top {
+
+        min-height: 140px !important;
+    }
+
+
+    #site-header .header-contact,
+    #site-header .contact-item {
+
+        width: 190px !important;
+
+        min-width: 190px !important;
+
+        min-height: 62px !important;
+
+        padding: 7px 10px !important;
+
+        gap: 9px !important;
+    }
+
+
+    #site-header .header-contact-icon,
+    #site-header .contact-item i {
+
+        width: 42px !important;
+
+        height: 42px !important;
+
+        min-width: 42px !important;
+    }
+
+
+    #site-header .header-contact-text span,
+    #site-header .contact-item small {
+
+        font-size: 7px !important;
+
+        letter-spacing: 1.4px !important;
+    }
+
+
+    #site-header .header-contact-text a,
+    #site-header .contact-item strong {
+
+        font-size: 11px !important;
+    }
+
+
+    #site-header .header-logo,
+    #site-header .main-logo {
+
+        width: 250px !important;
+
+        height: 140px !important;
+    }
+
+
+    #site-header .header-logo img,
+    #site-header .main-logo img,
+    #site-header img {
+
+        width: 220px !important;
+
+        height: 130px !important;
+
+        max-width: 220px !important;
+
+        max-height: 130px !important;
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    #site-header > header,
+    #site-header .header,
+    #site-header .header-universal {
+
+        min-height: 160px !important;
+
+        height: 160px !important;
+
+        display: flex !important;
+
+        align-items: flex-start !important;
+
+        justify-content: center !important;
+
+        padding: 5px 10px !important;
+    }
+
+
+    #site-header .header-top {
+
+        width: 100% !important;
+
+        height: 160px !important;
+
+        min-height: 160px !important;
+
+        display: flex !important;
+
+        align-items: flex-start !important;
+
+        justify-content: center !important;
+    }
+
+
+    /* logo */
+
+    #site-header .header-logo,
+    #site-header .main-logo {
+
+        width: 210px !important;
+
+        height: 100px !important;
+
+        top: 5px !important;
+
+        left: 50% !important;
+
+        transform:
+            translateX(-50%) !important;
+    }
+
+
+    #site-header .header-logo img,
+    #site-header .main-logo img,
+    #site-header img {
+
+        width: 190px !important;
+
+        height: 95px !important;
+
+        max-width: 190px !important;
+
+        max-height: 95px !important;
+    }
+
+
+    /* contatos */
+
+    #site-header .header-contact,
+    #site-header .contact-item {
+
+        position: absolute !important;
+
+        top: 108px !important;
+
+        width:
+            calc(50% - 18px) !important;
+
+        min-width: 0 !important;
+
+        height: 42px !important;
+
+        min-height: 42px !important;
+
+        padding: 4px 6px !important;
+
+        gap: 6px !important;
+
+        border-radius: 11px !important;
+    }
+
+
+    #site-header .header-phone {
+
+        left: 10px !important;
+
+        margin: 0 !important;
+    }
+
+
+    #site-header .header-whatsapp {
+
+        right: 10px !important;
+
+        margin: 0 !important;
+    }
+
+
+    #site-header .header-contact-icon,
+    #site-header .contact-item i {
+
+        width: 30px !important;
+
+        height: 30px !important;
+
+        min-width: 30px !important;
+
+        border-radius: 8px !important;
+
+        font-size: 12px !important;
+    }
+
+
+    #site-header .header-contact-text {
+
+        gap: 2px !important;
+
+        overflow: hidden !important;
+    }
+
+
+    #site-header .header-contact-text span,
+    #site-header .contact-item small {
+
+        font-size: 6px !important;
+
+        letter-spacing: 0.8px !important;
+    }
+
+
+    #site-header .header-contact-text a,
+    #site-header .contact-item strong {
+
+        font-size: 8.5px !important;
+
+        overflow: hidden !important;
+
+        text-overflow: ellipsis !important;
+    }
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    #site-header > header,
+    #site-header .header,
+    #site-header .header-universal {
+
+        height: 150px !important;
+
+        min-height: 150px !important;
+    }
+
+
+    #site-header .header-top {
+
+        height: 150px !important;
+
+        min-height: 150px !important;
+    }
+
+
+    #site-header .header-logo,
+    #site-header .main-logo {
+
+        width: 190px !important;
+
+        height: 90px !important;
+    }
+
+
+    #site-header .header-logo img,
+    #site-header .main-logo img,
+    #site-header img {
+
+        width: 175px !important;
+
+        height: 85px !important;
+
+        max-width: 175px !important;
+
+        max-height: 85px !important;
+    }
+
+
+    #site-header .header-contact,
+    #site-header .contact-item {
+
+        top: 100px !important;
+
+        height: 39px !important;
+
+        min-height: 39px !important;
+
+        width:
+            calc(50% - 14px) !important;
+    }
+
+
+    #site-header .header-phone {
+
+        left: 7px !important;
+    }
+
+
+    #site-header .header-whatsapp {
+
+        right: 7px !important;
+    }
+
+
+    #site-header .header-contact-icon,
+    #site-header .contact-item i {
+
+        width: 27px !important;
+
+        height: 27px !important;
+
+        min-width: 27px !important;
+
+        font-size: 10px !important;
+    }
+
+
+    #site-header .header-contact-text a,
+    #site-header .contact-item strong {
+
+        font-size: 7.5px !important;
+    }
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE
+   ========================================================= */
+
+#site-header a:focus-visible {
+
+    outline:
+        3px solid
+        rgba(56, 186, 94, 0.6) !important;
+
+    outline-offset: 3px !important;
+}
+/* =========================================================
+   CORREÇÃO DO HEADER NO CELULAR
+   REMOVE O RETÂNGULO VAZIO ABAIXO DA LOGO
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* Remove possíveis containers vazios do menu */
+    header nav:empty,
+    .navbar nav:empty,
+    .header nav:empty,
+    .nav-menu:empty,
+    .menu:empty {
+        display: none !important;
+    }
+
+
+    /* Esconde containers de navegação que ficam
+       vazios abaixo da logo */
+    .header-nav:empty,
+    .navbar-nav:empty,
+    .nav-links:empty,
+    .menu-links:empty {
+        display: none !important;
+    }
+
+
+    /* Caso o container não esteja literalmente vazio,
+       mas todos os links estejam escondidos */
+    .header-nav,
+    .navbar-nav,
+    .nav-links {
+
+        background: transparent !important;
+
+        border: none !important;
+
+        box-shadow: none !important;
+
+    }
+
+
+    /* Evita que algum bloco vazio mantenha altura */
+    .header-nav,
+    .navbar-nav,
+    .nav-links {
+
+        min-height: 0 !important;
+
+    }
+
+
+    /* Remove bordas arredondadas que possam estar
+       formando o retângulo */
+    .header-nav,
+    .navbar-nav,
+    .nav-links {
+
+        border-radius: 0 !important;
+
+    }
+
+}
