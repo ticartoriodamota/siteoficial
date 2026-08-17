@@ -1,10 +1,39 @@
+/* =========================================================
+   CARTÓRIO DA MOTA
+   JAVASCRIPT PRINCIPAL
+   Pesquisa + Header + Vídeo
+========================================================= */
+
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
-       HEADER / SCROLL
-       ===================================================== */
+       ELEMENTOS
+    ===================================================== */
 
     const header = document.querySelector(".header");
+
+    const menuButton =
+        document.querySelector(".menu-mobile");
+
+    const navbar =
+        document.querySelector(".navbar");
+
+    const searchBox =
+        document.querySelector(".search-box");
+
+    const searchInput =
+        searchBox?.querySelector("input");
+
+    const searchButton =
+        searchBox?.querySelector("button");
+
+    const video =
+        document.querySelector(".video-card video");
+
+
+    /* =====================================================
+       HEADER NO SCROLL
+    ===================================================== */
 
     function atualizarHeader() {
 
@@ -27,375 +56,234 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       MENU MOBILE
-       ===================================================== */
+       PESQUISA DO PORTAL
+    ===================================================== */
 
-    const menuButton =
-        document.querySelector(".menu-mobile");
+    const paginas = [
 
-    const navbar =
-        document.querySelector(".navbar");
+        {
+            termos: [
+                "certidao",
+                "certidão",
+                "certidoes",
+                "certidões"
+            ],
+            url: "paginas/certidoes/"
+        },
 
-    if (!menuButton || !navbar) {
-        return;
+        {
+            termos: [
+                "documento",
+                "documentos",
+                "documentacao",
+                "documentação"
+            ],
+            url: "paginas/documentos/"
+        },
+
+        {
+            termos: [
+                "emolumento",
+                "emolumentos",
+                "valor",
+                "valores",
+                "preco",
+                "preço"
+            ],
+            url: "paginas/emolumentos/"
+        },
+
+        {
+            termos: [
+                "download",
+                "downloads",
+                "formulario",
+                "formulário",
+                "requerimento",
+                "formularios",
+                "formulários"
+            ],
+            url: "paginas/downloads/"
+        },
+
+        {
+            termos: [
+                "cartorio",
+                "cartório",
+                "cartorios",
+                "cartórios",
+                "proximo",
+                "próximo"
+            ],
+            url: "paginas/cartorios/"
+        },
+
+        {
+            termos: [
+                "legislacao",
+                "legislação",
+                "lei",
+                "leis",
+                "norma",
+                "normas",
+                "provimento"
+            ],
+            url: "paginas/legislacao/"
+        },
+
+        {
+            termos: [
+                "ouvidoria",
+                "reclamacao",
+                "reclamação",
+                "elogio",
+                "sugestao",
+                "sugestão"
+            ],
+            url: "paginas/ouvidoria/"
+        },
+
+        {
+            termos: [
+                "faq",
+                "duvida",
+                "dúvida",
+                "duvidas",
+                "dúvidas",
+                "pergunta",
+                "perguntas"
+            ],
+            url: "paginas/faq/"
+        },
+
+        {
+            termos: [
+                "noticia",
+                "notícia",
+                "noticias",
+                "notícias",
+                "blog"
+            ],
+            url: "paginas/noticias/"
+        },
+
+        {
+            termos: [
+                "contato",
+                "telefone",
+                "whatsapp",
+                "endereco",
+                "endereço"
+            ],
+            url: "paginas/contato/"
+        },
+
+        {
+            termos: [
+                "tabelia",
+                "tabeliã",
+                "nathalia",
+                "natalia"
+            ],
+            url: "paginas/tabelia/"
+        },
+
+        {
+            termos: [
+                "institucional",
+                "cartorio da mota",
+                "cartório da mota",
+                "historia",
+                "história",
+                "sobre"
+            ],
+            url: "paginas/institucional/"
+        }
+
+    ];
+
+
+    /* =====================================================
+       NORMALIZAR TEXTO
+    ===================================================== */
+
+    function normalizar(texto) {
+
+        return texto
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .trim();
+
     }
 
 
     /* =====================================================
-       EVITA CRIAR O MENU DUAS VEZES
-       ===================================================== */
+       EXECUTAR PESQUISA
+    ===================================================== */
 
-    let menu =
-        document.querySelector(".mobile-menu");
+    function pesquisar() {
 
-    let overlay =
-        document.querySelector(".mobile-overlay");
+        if (!searchInput) return;
 
+        const valor =
+            searchInput.value.trim();
 
-    /* =====================================================
-       CRIA MENU
-       ===================================================== */
+        if (!valor) {
 
-    if (!menu) {
+            searchInput.focus();
 
-        menu =
-            document.createElement("aside");
+            return;
+        }
 
-        menu.className =
-            "mobile-menu";
+        const termo =
+            normalizar(valor);
 
 
-        /* -----------------------------------------------
-           OVERLAY
-           ----------------------------------------------- */
+        const resultado =
+            paginas.find((pagina) => {
 
-        overlay =
-            document.createElement("div");
+                return pagina.termos.some((palavra) => {
 
-        overlay.className =
-            "mobile-overlay";
+                    const palavraNormalizada =
+                        normalizar(palavra);
 
-
-        /* -----------------------------------------------
-           CABEÇALHO
-           ----------------------------------------------- */
-
-        const menuHeader =
-            document.createElement("div");
-
-        menuHeader.className =
-            "mobile-menu-header";
-
-
-        menuHeader.innerHTML = `
-            <img
-                src="img/logo-branca.png"
-                alt="Cartório da Mota"
-            >
-
-            <button
-                class="mobile-menu-close"
-                type="button"
-                aria-label="Fechar menu"
-            >
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-        `;
-
-
-        /* -----------------------------------------------
-           LISTA
-           ----------------------------------------------- */
-
-        const lista =
-            document.createElement("ul");
-
-
-        navbar
-            .querySelectorAll("a")
-            .forEach((link) => {
-
-                const li =
-                    document.createElement("li");
-
-
-                const novoLink =
-                    document.createElement("a");
-
-
-                novoLink.href =
-                    link.getAttribute("href") || "#";
-
-
-                /*
-                 * Copia o ícone original
-                 */
-
-                const icon =
-                    link.querySelector("i");
-
-
-                if (icon) {
-
-                    novoLink.appendChild(
-                        icon.cloneNode(true)
+                    return (
+                        palavraNormalizada.includes(termo) ||
+                        termo.includes(palavraNormalizada)
                     );
 
-                }
-
-
-                /*
-                 * Texto
-                 */
-
-                const texto =
-                    document.createElement("span");
-
-
-                texto.textContent =
-                    link.textContent.trim();
-
-
-                novoLink.appendChild(
-                    texto
-                );
-
-
-                li.appendChild(
-                    novoLink
-                );
-
-
-                lista.appendChild(
-                    li
-                );
+                });
 
             });
 
 
-        /* -----------------------------------------------
-           MONTA MENU
-           ----------------------------------------------- */
+        if (resultado) {
 
-        menu.appendChild(
-            menuHeader
-        );
+            window.location.href =
+                resultado.url;
 
-        menu.appendChild(
-            lista
-        );
-
-
-        document.body.appendChild(
-            overlay
-        );
-
-        document.body.appendChild(
-            menu
-        );
-
-    }
-
-
-    /* =====================================================
-       FUNÇÃO ABRIR
-       ===================================================== */
-
-    function abrirMenu() {
-
-        menu.classList.add(
-            "active"
-        );
-
-        overlay.classList.add(
-            "active"
-        );
-
-        document.body.style.overflow =
-            "hidden";
-    }
-
-
-    /* =====================================================
-       FUNÇÃO FECHAR
-       ===================================================== */
-
-    function fecharMenu() {
-
-        menu.classList.remove(
-            "active"
-        );
-
-        overlay.classList.remove(
-            "active"
-        );
-
-        document.body.style.overflow =
-            "";
-    }
-
-
-    /* =====================================================
-       BOTÃO MENU
-       ===================================================== */
-
-    menuButton.addEventListener(
-        "click",
-        abrirMenu
-    );
-
-
-    /* =====================================================
-       BOTÃO FECHAR
-       ===================================================== */
-
-    const botaoFechar =
-        menu.querySelector(
-            ".mobile-menu-close"
-        );
-
-
-    if (botaoFechar) {
-
-        botaoFechar.addEventListener(
-            "click",
-            fecharMenu
-        );
-
-    }
-
-
-    /* =====================================================
-       CLICAR NO FUNDO
-       ===================================================== */
-
-    overlay.addEventListener(
-        "click",
-        fecharMenu
-    );
-
-
-    /* =====================================================
-       CLICAR EM UM LINK
-       ===================================================== */
-
-    menu
-        .querySelectorAll("a")
-        .forEach((link) => {
-
-            link.addEventListener(
-                "click",
-                fecharMenu
-            );
-
-        });
-
-
-    /* =====================================================
-       TECLA ESC
-       ===================================================== */
-
-    document.addEventListener(
-        "keydown",
-        (event) => {
-
-            if (
-                event.key === "Escape" &&
-                menu.classList.contains("active")
-            ) {
-
-                fecharMenu();
-
-            }
-
+            return;
         }
-    );
 
 
-    /* =====================================================
-       FECHAR AUTOMATICAMENTE AO VOLTAR PARA DESKTOP
-       ===================================================== */
-
-    window.addEventListener(
-        "resize",
-        () => {
-
-            if (
-                window.innerWidth > 1050 &&
-                menu.classList.contains("active")
-            ) {
-
-                fecharMenu();
-
-            }
-
-        }
-    );
-
-
-    /* =====================================================
-       PESQUISA
-       ===================================================== */
-
-    const campoPesquisa =
-        document.querySelector(
-            ".search-box input"
+        alert(
+            `Não encontramos resultados para "${valor}".\n\n` +
+            `Tente pesquisar por certidões, documentos, ` +
+            `emolumentos, downloads, legislação, ` +
+            `tabeliã, notícias ou contato.`
         );
-
-    const botaoPesquisa =
-        document.querySelector(
-            ".search-box button"
-        );
-
-    const cards =
-        document.querySelectorAll(
-            ".dashboard-card"
-        );
-
-
-    function pesquisar() {
-
-        if (!campoPesquisa) return;
-
-
-        const termo =
-            campoPesquisa.value
-                .trim()
-                .toLowerCase();
-
-
-        cards.forEach((card) => {
-
-            const texto =
-                card.textContent
-                    .toLowerCase();
-
-
-            if (
-                termo === "" ||
-                texto.includes(termo)
-            ) {
-
-                card.style.display =
-                    "";
-
-            } else {
-
-                card.style.display =
-                    "none";
-
-            }
-
-        });
 
     }
 
 
-    /* Botão pesquisar */
+    /* =====================================================
+       BOTÃO DA PESQUISA
+    ===================================================== */
 
-    if (botaoPesquisa) {
+    if (searchButton) {
 
-        botaoPesquisa.addEventListener(
+        searchButton.addEventListener(
             "click",
             pesquisar
         );
@@ -403,17 +291,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* Enter */
+    /* =====================================================
+       ENTER NA PESQUISA
+    ===================================================== */
 
-    if (campoPesquisa) {
+    if (searchInput) {
 
-        campoPesquisa.addEventListener(
+        searchInput.addEventListener(
             "keydown",
             (event) => {
 
-                if (
-                    event.key === "Enter"
-                ) {
+                if (event.key === "Enter") {
 
                     event.preventDefault();
 
@@ -421,15 +309,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 }
 
+                if (event.key === "Escape") {
 
-                if (
-                    event.key === "Escape"
-                ) {
+                    searchInput.value = "";
 
-                    campoPesquisa.value =
-                        "";
-
-                    pesquisar();
+                    searchInput.blur();
 
                 }
 
@@ -440,24 +324,121 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       FECHAR MENU AO CLICAR EM LINK
-       ===================================================== */
+       VÍDEO HERO
+       Força a reprodução e evita falhas de renderização
+    ===================================================== */
 
-    document.addEventListener(
-        "click",
-        (event) => {
+    if (video) {
 
-            const link =
-                event.target.closest(
-                    ".mobile-menu a"
-                );
+        video.setAttribute(
+            "autoplay",
+            ""
+        );
+
+        video.setAttribute(
+            "muted",
+            ""
+        );
+
+        video.setAttribute(
+            "playsinline",
+            ""
+        );
+
+        video.setAttribute(
+            "preload",
+            "auto"
+        );
 
 
-            if (link) {
-                fecharMenu();
+        video.muted = true;
+
+
+        const iniciarVideo = () => {
+
+            const promessa =
+                video.play();
+
+            if (
+                promessa &&
+                typeof promessa.catch === "function"
+            ) {
+
+                promessa.catch(() => {
+                    /* navegador bloqueou autoplay */
+                });
+
             }
 
+        };
+
+
+        if (
+            video.readyState >= 2
+        ) {
+
+            iniciarVideo();
+
+        } else {
+
+            video.addEventListener(
+                "loadeddata",
+                iniciarVideo,
+                { once: true }
+            );
+
         }
-    );
+
+
+        video.addEventListener(
+            "canplay",
+            iniciarVideo,
+            { once: true }
+        );
+
+
+        /*
+           Pequeno repaint para navegadores
+           que deixam o vídeo visualmente parado.
+        */
+
+        requestAnimationFrame(() => {
+
+            video.style.transform =
+                "translateZ(0)";
+
+            video.style.opacity =
+                "0.999";
+
+            requestAnimationFrame(() => {
+
+                video.style.opacity =
+                    "1";
+
+            });
+
+        });
+
+    }
+
+
+    /* =====================================================
+       MENU MOBILE
+    ===================================================== */
+
+    if (menuButton && navbar) {
+
+        menuButton.addEventListener(
+            "click",
+            () => {
+
+                navbar.classList.toggle(
+                    "active"
+                );
+
+            }
+        );
+
+    }
 
 });

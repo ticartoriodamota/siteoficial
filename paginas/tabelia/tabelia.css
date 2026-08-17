@@ -1,0 +1,827 @@
+/* =========================================================
+   TABELIÃ
+   CARTÓRIO DA MOTA
+========================================================= */
+
+
+/* =========================================================
+   BASE
+========================================================= */
+
+.tabelia-page {
+    width: 100%;
+    overflow: hidden;
+    color: #101411;
+    background: #f5f8f6;
+}
+
+.tabelia-page * {
+    box-sizing: border-box;
+}
+
+.tabelia-page img {
+    display: block;
+    max-width: 100%;
+}
+
+.tabelia-page .container {
+    width: min(1240px, calc(100% - 80px));
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.tabelia-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    color: #229b4b;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+}
+
+.tabelia-label i {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.tabelia-hero {
+    position: relative;
+
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(53, 197, 101, .12),
+            transparent 31%
+        ),
+        #f5f8f6;
+
+    padding: 70px 0;
+}
+
+.tabelia-hero-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        470px;
+
+    align-items: center;
+
+    gap: 90px;
+}
+
+
+/* =========================================================
+   HERO TEXTO
+========================================================= */
+
+.tabelia-hero-content {
+    max-width: 690px;
+}
+
+.tabelia-hero-content h1 {
+    margin: 20px 0;
+
+    font-size: clamp(48px, 5.5vw, 76px);
+
+    line-height: 1;
+
+    letter-spacing: -3.5px;
+
+    font-weight: 800;
+
+    color: #050706;
+}
+
+.tabelia-hero-content h1 span {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #229b4b;
+
+    font-size: .56em;
+
+    line-height: 1.18;
+
+    letter-spacing: -1.3px;
+}
+
+.tabelia-hero-content p {
+    max-width: 590px;
+
+    margin: 0 0 30px;
+
+    color: #68736c;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   BOTÃO
+========================================================= */
+
+.tabelia-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+
+    min-height: 52px;
+
+    padding: 0 22px;
+
+    border-radius: 14px;
+
+    background: #35c565;
+
+    color: #061009;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+.tabelia-button:hover {
+    transform: translateY(-3px);
+
+    background: #42d773;
+
+    box-shadow:
+        0 15px 35px rgba(53, 197, 101, .22);
+}
+
+
+/* =========================================================
+   RETRATO
+========================================================= */
+
+.tabelia-portrait {
+    position: relative;
+
+    height: 540px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.portrait-background {
+    position: absolute;
+
+    inset: 25px 0 0;
+
+    border-radius: 30px 30px 8px 8px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #e6f4eb,
+            #ffffff
+        );
+}
+
+.portrait-background::after {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    right: -80px;
+    top: -80px;
+
+    border-radius: 50%;
+
+    background: rgba(53, 197, 101, .10);
+}
+
+.tabelia-portrait img {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center bottom;
+}
+
+
+/* =========================================================
+   ASSINATURA
+========================================================= */
+
+.portrait-signature {
+    position: absolute;
+
+    z-index: 4;
+
+    left: -30px;
+    bottom: 35px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 16px 20px;
+
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, .94);
+
+    border: 1px solid #e0e8e2;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, .10);
+
+    backdrop-filter: blur(10px);
+}
+
+.portrait-signature span {
+    margin-bottom: 3px;
+
+    color: #68736c;
+
+    font-size: 8px;
+
+    letter-spacing: 1.2px;
+
+    font-weight: 700;
+}
+
+.portrait-signature strong {
+    color: #101411;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   HISTÓRIA
+========================================================= */
+
+.tabelia-story {
+    padding: 105px 0;
+
+    background: #ffffff;
+}
+
+.story-grid {
+    display: grid;
+
+    grid-template-columns: .8fr 1.2fr;
+
+    gap: 100px;
+}
+
+.story-intro h2 {
+    margin: 18px 0 0;
+
+    font-size: clamp(38px, 4.3vw, 57px);
+
+    line-height: 1.05;
+
+    letter-spacing: -2.5px;
+
+    font-weight: 800;
+}
+
+.story-intro h2 span {
+    display: block;
+
+    color: #229b4b;
+}
+
+.story-text {
+    max-width: 650px;
+}
+
+.story-text p {
+    margin: 0 0 20px;
+
+    color: #68736c;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+}
+
+.story-text .story-highlight {
+    margin-bottom: 25px;
+
+    color: #101411;
+
+    font-size: 22px;
+
+    line-height: 1.5;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   TRAJETÓRIA
+========================================================= */
+
+.tabelia-timeline {
+    padding: 90px 0;
+
+    background: #f5f8f6;
+}
+
+.timeline-heading {
+    max-width: 680px;
+
+    margin-bottom: 50px;
+}
+
+.timeline-heading h2 {
+    margin: 17px 0 0;
+
+    font-size: clamp(34px, 4vw, 50px);
+
+    line-height: 1.08;
+
+    letter-spacing: -2px;
+
+    font-weight: 800;
+}
+
+.timeline-heading h2 span {
+    color: #229b4b;
+}
+
+.timeline {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.timeline-item {
+    position: relative;
+
+    min-height: 190px;
+
+    padding: 27px;
+
+    border: 1px solid #dfe8e2;
+
+    border-radius: 22px;
+
+    background: #ffffff;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.timeline-item:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, .07);
+}
+
+.timeline-number {
+    margin-bottom: 25px;
+
+    color: #35c565;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.timeline-item h3 {
+    margin: 0 0 9px;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+.timeline-item p {
+    margin: 0;
+
+    color: #68736c;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   VALORES
+========================================================= */
+
+.tabelia-values {
+    padding: 100px 0;
+
+    background: #ffffff;
+}
+
+.values-heading {
+    max-width: 730px;
+
+    margin-bottom: 50px;
+}
+
+.values-heading h2 {
+    margin: 17px 0 0;
+
+    font-size: clamp(34px, 4vw, 50px);
+
+    line-height: 1.08;
+
+    letter-spacing: -2px;
+
+    font-weight: 800;
+}
+
+.values-heading h2 span {
+    color: #229b4b;
+}
+
+.values-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.value-item {
+    padding: 30px;
+
+    border-radius: 22px;
+
+    background: #f5f8f6;
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+}
+
+.value-item:hover {
+    transform: translateY(-4px);
+
+    background: #eef8f1;
+}
+
+.value-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 22px;
+
+    border-radius: 14px;
+
+    background: #07100a;
+
+    color: #35c565;
+}
+
+.value-item h3 {
+    margin: 0 0 9px;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+.value-item p {
+    margin: 0;
+
+    color: #68736c;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FRASE
+========================================================= */
+
+.tabelia-quote {
+    padding: 105px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #07100a,
+            #0d1811
+        );
+}
+
+.quote-content {
+    max-width: 850px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.quote-content > i {
+    margin-bottom: 25px;
+
+    color: #35c565;
+
+    font-size: 25px;
+}
+
+.quote-content blockquote {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(26px, 3.5vw, 43px);
+
+    line-height: 1.35;
+
+    letter-spacing: -1px;
+
+    font-weight: 500;
+}
+
+.quote-content span {
+    display: block;
+
+    margin-top: 25px;
+
+    color: #35c565;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+.tabelia-final {
+    padding: 100px 0;
+
+    background: #f5f8f6;
+
+    text-align: center;
+}
+
+.final-content {
+    max-width: 750px;
+
+    margin: auto;
+}
+
+.final-content > span {
+    color: #229b4b;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.final-content h2 {
+    margin: 16px 0;
+
+    font-size: clamp(38px, 5vw, 58px);
+
+    line-height: 1.05;
+
+    letter-spacing: -2.5px;
+
+    font-weight: 800;
+}
+
+.final-content h2 span {
+    color: #229b4b;
+}
+
+.final-content p {
+    max-width: 580px;
+
+    margin: 0 auto 28px;
+
+    color: #68736c;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .tabelia-page .container {
+        width: min(
+            calc(100% - 50px),
+            850px
+        );
+    }
+
+    .tabelia-hero-grid {
+        grid-template-columns: 1fr 380px;
+
+        gap: 45px;
+    }
+
+    .story-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .timeline,
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 720px) {
+
+    .tabelia-page .container {
+        width: calc(100% - 34px);
+    }
+
+    .tabelia-hero {
+        padding: 55px 0 25px;
+    }
+
+    .tabelia-hero-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .tabelia-hero-content {
+        text-align: center;
+    }
+
+    .tabelia-hero-content p {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .tabelia-hero-content h1 {
+        font-size: 48px;
+
+        letter-spacing: -2px;
+    }
+
+    .tabelia-hero-content h1 span {
+        font-size: .55em;
+    }
+
+    .tabelia-button {
+        width: 100%;
+    }
+
+    .tabelia-portrait {
+        height: 410px;
+    }
+
+    .portrait-background {
+        inset: 15px 0 0;
+    }
+
+    .portrait-signature {
+        left: 50%;
+        bottom: 15px;
+
+        transform: translateX(-50%);
+
+        white-space: nowrap;
+    }
+
+    .tabelia-story,
+    .tabelia-values {
+        padding: 75px 0;
+    }
+
+    .story-intro h2,
+    .timeline-heading h2,
+    .values-heading h2 {
+        font-size: 36px;
+    }
+
+    .story-text .story-highlight {
+        font-size: 19px;
+    }
+
+    .tabelia-timeline {
+        padding: 75px 0;
+    }
+
+    .timeline {
+        gap: 12px;
+    }
+
+    .timeline-item {
+        min-height: auto;
+
+        padding: 22px;
+    }
+
+    .values-grid {
+        gap: 12px;
+    }
+
+    .value-item {
+        padding: 24px;
+    }
+
+    .tabelia-quote {
+        padding: 75px 0;
+    }
+
+    .quote-content blockquote {
+        font-size: 26px;
+    }
+
+    .tabelia-final {
+        padding: 75px 0;
+    }
+
+    .final-content h2 {
+        font-size: 38px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .tabelia-page .container {
+        width: calc(100% - 26px);
+    }
+
+    .tabelia-hero-content h1 {
+        font-size: 42px;
+    }
+
+    .tabelia-portrait {
+        height: 360px;
+    }
+
+}

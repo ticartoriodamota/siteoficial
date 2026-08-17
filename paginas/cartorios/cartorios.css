@@ -1,0 +1,742 @@
+/* =========================================================
+   CARTÓRIOS PRÓXIMOS
+   CSS EXCLUSIVO DA PÁGINA
+   ========================================================= */
+
+
+/* =========================================================
+   RESET LOCAL
+   ========================================================= */
+
+.cartorios-page,
+.cartorios-page *,
+#site-help,
+#site-help *,
+#site-footer,
+#site-footer * {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PÁGINA
+   ========================================================= */
+
+.cartorios-page {
+    width: 100%;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(47, 191, 92, 0.08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(47, 191, 92, 0.07),
+            transparent 30%
+        ),
+        #f3f8f5;
+
+    padding: 90px 0 100px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.cartorios-container {
+    width: min(1200px, calc(100% - 48px));
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* =========================================================
+   ÍCONE PRINCIPAL
+   ========================================================= */
+
+.cartorios-icon {
+    width: 96px;
+    height: 96px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #000;
+
+    border-radius: 22px;
+
+    margin-bottom: 30px;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.14);
+}
+
+
+.cartorios-icon i {
+    font-size: 42px;
+    color: #2fbe60;
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.cartorios-label {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #159447;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    letter-spacing: 4px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.cartorios-container > h1 {
+    width: 100%;
+
+    margin: 0;
+
+    color: #050505;
+
+    font-size: clamp(42px, 5vw, 72px);
+
+    line-height: 1.05;
+
+    font-weight: 900;
+
+    letter-spacing: -3px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   DESCRIÇÃO
+   ========================================================= */
+
+.cartorios-description {
+    max-width: 850px;
+
+    margin: 26px auto 70px;
+
+    color: #64716b;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   LISTA
+   ========================================================= */
+
+.cartorios-lista {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 28px;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.cartorio-card {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 30px;
+
+    padding: 38px;
+
+    background: #ffffff;
+
+    border: 1px solid #dfe8e3;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 15px 45px rgba(15, 50, 30, 0.07);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+
+    overflow: hidden;
+}
+
+
+.cartorio-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #2fbe60;
+
+    box-shadow:
+        0 22px 55px rgba(15, 80, 40, 0.12);
+}
+
+
+/* =========================================================
+   CARD DESTAQUE
+   ========================================================= */
+
+.cartorio-card.destaque {
+    border: 2px solid #2fbe60;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f7fcf9 100%
+        );
+}
+
+
+/* =========================================================
+   VOCÊ ESTÁ AQUI
+   ========================================================= */
+
+.cartorio-atual {
+    position: absolute;
+
+    top: 24px;
+    right: 28px;
+
+    padding: 7px 14px;
+
+    border-radius: 999px;
+
+    background: #e8f8ed;
+
+    color: #159447;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   ÍCONE DO CARD
+   ========================================================= */
+
+.cartorio-card-icon {
+    flex: 0 0 76px;
+
+    width: 76px;
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #000;
+
+    border-radius: 20px;
+}
+
+
+.cartorio-card-icon i {
+    color: #2fbe60;
+
+    font-size: 30px;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+   ========================================================= */
+
+.cartorio-card-content {
+    min-width: 0;
+
+    flex: 1;
+}
+
+
+.cartorio-card-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #159447;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.cartorio-card-content h2 {
+    margin: 0 0 14px;
+
+    padding-right: 170px;
+
+    color: #080808;
+
+    font-size: 27px;
+    line-height: 1.2;
+
+    font-weight: 800;
+}
+
+
+.cartorio-card-content p {
+    max-width: 900px;
+
+    margin: 0 0 25px;
+
+    color: #65736d;
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+.cartorio-card-content p strong {
+    color: #222;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES
+   ========================================================= */
+
+.cartorio-card-info {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 13px 28px;
+
+    margin-bottom: 26px;
+
+    padding-top: 4px;
+}
+
+
+.cartorio-card-info span {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 9px;
+
+    color: #596660;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+.cartorio-card-info i {
+    flex: 0 0 18px;
+
+    width: 18px;
+
+    margin-top: 2px;
+
+    color: #2fbe60;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+
+.cartorio-card-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.cartorio-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    min-height: 48px;
+
+    padding: 0 22px;
+
+    background: #2fbe60;
+
+    color: #000;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.cartorio-button:hover {
+    background: #25a951;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(47, 190, 96, 0.25);
+}
+
+
+.cartorio-button i {
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   ANIMAÇÃO DOS CARDS
+   ========================================================= */
+
+.cartorio-card {
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.cartorio-card-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   IMPORTANTE
+   Não deixar o CSS quebrar os universais.
+   ========================================================= */
+
+#site-header,
+#site-help,
+#site-footer {
+    width: 100%;
+    max-width: none;
+
+    margin-left: 0;
+    margin-right: 0;
+
+    padding-left: 0;
+    padding-right: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   ÁREA DE AJUDA
+   ========================================================= */
+
+#site-help {
+    width: 100%;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+#site-footer {
+    width: 100%;
+
+    overflow: hidden;
+}
+
+
+#site-footer img,
+#site-footer svg,
+#site-footer iframe {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .cartorios-page {
+        padding: 70px 0 80px;
+    }
+
+
+    .cartorios-container {
+        width: min(100% - 32px, 700px);
+    }
+
+
+    .cartorios-container > h1 {
+        font-size: clamp(38px, 8vw, 58px);
+
+        letter-spacing: -2px;
+    }
+
+
+    .cartorio-card {
+        padding: 28px;
+
+        gap: 22px;
+    }
+
+
+    .cartorio-card-content h2 {
+        padding-right: 0;
+    }
+
+
+    .cartorio-atual {
+        position: static;
+
+        display: inline-block;
+
+        margin-bottom: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .cartorios-page {
+        padding: 55px 0 65px;
+    }
+
+
+    .cartorios-container {
+        width: calc(100% - 28px);
+    }
+
+
+    .cartorios-icon {
+        width: 82px;
+        height: 82px;
+
+        border-radius: 20px;
+
+        margin-bottom: 24px;
+    }
+
+
+    .cartorios-icon i {
+        font-size: 34px;
+    }
+
+
+    .cartorios-label {
+        font-size: 11px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .cartorios-container > h1 {
+        font-size: 42px;
+
+        line-height: 1.05;
+
+        letter-spacing: -1.8px;
+    }
+
+
+    .cartorios-description {
+        margin-top: 20px;
+        margin-bottom: 45px;
+
+        font-size: 16px;
+    }
+
+
+    .cartorio-card {
+        flex-direction: column;
+
+        padding: 24px;
+
+        border-radius: 22px;
+
+        gap: 18px;
+    }
+
+
+    .cartorio-card-icon {
+        flex: none;
+
+        width: 68px;
+        height: 68px;
+
+        border-radius: 18px;
+    }
+
+
+    .cartorio-card-icon i {
+        font-size: 27px;
+    }
+
+
+    .cartorio-card-label {
+        font-size: 11px;
+
+        letter-spacing: 1.7px;
+    }
+
+
+    .cartorio-card-content h2 {
+        padding-right: 0;
+
+        font-size: 23px;
+
+        line-height: 1.25;
+    }
+
+
+    .cartorio-card-content p {
+        font-size: 15px;
+
+        line-height: 1.65;
+    }
+
+
+    .cartorio-card-info {
+        flex-direction: column;
+
+        gap: 11px;
+
+        margin-bottom: 22px;
+    }
+
+
+    .cartorio-card-info span {
+        font-size: 14px;
+    }
+
+
+    .cartorio-card-actions {
+        width: 100%;
+    }
+
+
+    .cartorio-button {
+        width: 100%;
+    }
+
+
+    .cartorio-atual {
+        align-self: flex-start;
+
+        margin: 0 0 0 auto;
+    }
+
+}
+
+
+/* =========================================================
+   CELULARES PEQUENOS
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .cartorios-container {
+        width: calc(100% - 22px);
+    }
+
+
+    .cartorios-container > h1 {
+        font-size: 36px;
+    }
+
+
+    .cartorios-description {
+        font-size: 15px;
+    }
+
+
+    .cartorio-card {
+        padding: 20px;
+
+        border-radius: 20px;
+    }
+
+
+    .cartorio-card-content h2 {
+        font-size: 21px;
+    }
+
+
+    .cartorio-card-content p {
+        font-size: 14px;
+    }
+
+
+    .cartorio-card-info span {
+        font-size: 13px;
+    }
+
+
+    .cartorio-button {
+        min-height: 46px;
+
+        font-size: 13px;
+    }
+
+}

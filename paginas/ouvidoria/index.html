@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Ouvidoria do Cartório da Mota. Envie dúvidas, sugestões, elogios, reclamações e solicitações."
+    >
+
+    <title>Ouvidoria | Cartório da Mota</title>
+
+    <!-- =====================================================
+         FONTES
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- =====================================================
+         ÍCONES
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- =====================================================
+         CSS UNIVERSAIS
+    ====================================================== -->
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/help.css">
+    <link rel="stylesheet" href="../../css/flutuante.css">
+
+    <!-- =====================================================
+         CSS DA PÁGINA
+    ====================================================== -->
+
+    <link rel="stylesheet" href="ouvidoria.css">
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         HEADER UNIVERSAL
+    ====================================================== -->
+
+    <div id="site-header"></div>
+
+
+    <!-- =====================================================
+         CONTEÚDO
+    ====================================================== -->
+
+    <main class="ouvidoria-page">
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="ouvidoria-hero">
+
+            <div class="ouvidoria-hero-icon">
+                <i class="fa-solid fa-comments"></i>
+            </div>
+
+            <span class="ouvidoria-label">
+                ATENDIMENTO
+            </span>
+
+            <h1>
+                Ouvidoria
+            </h1>
+
+            <p>
+                Sua opinião é importante para nós. Envie dúvidas,
+                sugestões, elogios, reclamações ou outras manifestações.
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             CONTEÚDO PRINCIPAL
+        ================================================== -->
+
+        <section class="ouvidoria-content">
+
+            <div class="ouvidoria-container">
+
+
+                <!-- =================================================
+                     INTRODUÇÃO
+                ================================================== -->
+
+                <div class="ouvidoria-intro">
+
+                    <span class="section-label">
+                        FALE CONOSCO
+                    </span>
+
+                    <h2>
+                        Como podemos ajudar?
+                    </h2>
+
+                    <p>
+                        A Ouvidoria é um canal destinado a receber
+                        manifestações e contribuir para a melhoria
+                        contínua dos serviços prestados pelo Cartório
+                        da Mota.
+                    </p>
+
+                </div>
+
+
+                <!-- =================================================
+                     TIPOS DE MANIFESTAÇÃO
+                ================================================== -->
+
+                <div class="manifestacoes-grid">
+
+
+                    <button
+                        type="button"
+                        class="manifestacao-card active"
+                        data-type="duvida"
+                    >
+
+                        <div class="manifestacao-icon">
+                            <i class="fa-solid fa-circle-question"></i>
+                        </div>
+
+                        <div>
+                            <h3>
+                                Dúvida
+                            </h3>
+
+                            <p>
+                                Tire dúvidas sobre nossos serviços
+                                e procedimentos.
+                            </p>
+                        </div>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="manifestacao-card"
+                        data-type="sugestao"
+                    >
+
+                        <div class="manifestacao-icon">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+
+                        <div>
+                            <h3>
+                                Sugestão
+                            </h3>
+
+                            <p>
+                                Compartilhe ideias para melhorar
+                                nossos serviços.
+                            </p>
+                        </div>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="manifestacao-card"
+                        data-type="elogio"
+                    >
+
+                        <div class="manifestacao-icon">
+                            <i class="fa-solid fa-thumbs-up"></i>
+                        </div>
+
+                        <div>
+                            <h3>
+                                Elogio
+                            </h3>
+
+                            <p>
+                                Registre sua experiência positiva
+                                com nossa equipe.
+                            </p>
+
+                        </div>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="manifestacao-card"
+                        data-type="reclamacao"
+                    >
+
+                        <div class="manifestacao-icon">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+
+                        <div>
+                            <h3>
+                                Reclamação
+                            </h3>
+
+                            <p>
+                                Informe situações que precisam
+                                de atenção.
+                            </p>
+                        </div>
+
+                    </button>
+
+
+                </div>
+
+
+                <!-- =================================================
+                     FORMULÁRIO
+                ================================================== -->
+
+                <section class="ouvidoria-form-section">
+
+                    <div class="form-heading">
+
+                        <span class="section-label">
+                            MANIFESTAÇÃO
+                        </span>
+
+                        <h2>
+                            Envie sua mensagem
+                        </h2>
+
+                        <p>
+                            Preencha os campos abaixo para encaminhar
+                            sua manifestação.
+                        </p>
+
+                    </div>
+
+
+                    <form
+                        id="ouvidoriaForm"
+                        class="ouvidoria-form"
+                    >
+
+
+                        <!-- TIPO -->
+
+                        <div class="form-group">
+
+                            <label for="tipoManifestacao">
+                                Tipo de manifestação
+                            </label>
+
+                            <select
+                                id="tipoManifestacao"
+                                name="tipo"
+                                required
+                            >
+
+                                <option value="Dúvida">
+                                    Dúvida
+                                </option>
+
+                                <option value="Sugestão">
+                                    Sugestão
+                                </option>
+
+                                <option value="Elogio">
+                                    Elogio
+                                </option>
+
+                                <option value="Reclamação">
+                                    Reclamação
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- NOME + TELEFONE -->
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="nome">
+                                    Nome
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="nome"
+                                    name="nome"
+                                    placeholder="Digite seu nome"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="telefone">
+                                    Telefone
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="telefone"
+                                    name="telefone"
+                                    placeholder="(64) 99999-9999"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                E-mail
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="seuemail@email.com"
+                            >
+
+                        </div>
+
+
+                        <!-- ASSUNTO -->
+
+                        <div class="form-group">
+
+                            <label for="assunto">
+                                Assunto
+                            </label>
+
+                            <input
+                                type="text"
+                                id="assunto"
+                                name="assunto"
+                                placeholder="Digite o assunto"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- MENSAGEM -->
+
+                        <div class="form-group">
+
+                            <label for="mensagem">
+                                Mensagem
+                            </label>
+
+                            <textarea
+                                id="mensagem"
+                                name="mensagem"
+                                rows="7"
+                                placeholder="Digite sua manifestação..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <!-- AVISO -->
+
+                        <div class="form-notice">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                            <p>
+                                Utilize este canal para enviar sua
+                                manifestação ao Cartório da Mota.
+                            </p>
+
+                        </div>
+
+
+                        <!-- BOTÃO -->
+
+                        <button
+                            type="submit"
+                            class="form-submit"
+                        >
+
+                            <i class="fa-brands fa-whatsapp"></i>
+
+                            Enviar pelo WhatsApp
+
+                        </button>
+
+
+                    </form>
+
+                </section>
+
+
+                <!-- =================================================
+                     CANAIS
+                ================================================== -->
+
+                <section class="canais-section">
+
+                    <div class="section-heading">
+
+                        <span class="section-label">
+                            OUTROS CANAIS
+                        </span>
+
+                        <h2>
+                            Fale diretamente conosco
+                        </h2>
+
+                    </div>
+
+
+                    <div class="canais-grid">
+
+
+                        <a
+                            href="tel:+556436511524"
+                            class="canal-card"
+                        >
+
+                            <div class="canal-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    TELEFONE
+                                </span>
+
+                                <strong>
+                                    (64) 3651-1524
+                                </strong>
+
+                            </div>
+
+                        </a>
+
+
+                        <a
+                            href="https://wa.me/5564981622179"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="canal-card"
+                        >
+
+                            <div class="canal-icon">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    WHATSAPP
+                                </span>
+
+                                <strong>
+                                    (64) 98162-2179
+                                </strong>
+
+                            </div>
+
+                        </a>
+
+
+                    </div>
+
+                </section>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         HELP UNIVERSAL
+    ====================================================== -->
+
+    <div id="site-help"></div>
+
+
+    <!-- =====================================================
+         FOOTER UNIVERSAL
+    ====================================================== -->
+
+    <div id="site-footer"></div>
+
+
+    <!-- =====================================================
+         JS UNIVERSAL
+    ====================================================== -->
+
+    <script src="../../js/components.js"></script>
+
+    <!-- =====================================================
+         JS DA PÁGINA
+    ====================================================== -->
+
+    <script src="ouvidoria.js"></script>
+
+</body>
+
+</html>

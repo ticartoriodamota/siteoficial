@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Área restrita do Cartório da Mota."
+    >
+
+    <title>Área Restrita | Cartório da Mota</title>
+
+
+    <!-- =====================================================
+         FONTE
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         CSS PRINCIPAL
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../../css/style.css"
+    >
+
+
+    <!-- =====================================================
+         CSS DA ÁREA RESTRITA
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="restrito.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         ÁREA RESTRITA
+    ====================================================== -->
+
+    <main class="area-restrita">
+
+
+        <!-- =================================================
+             PAINEL ESQUERDO
+        ================================================== -->
+
+        <section class="area-brand">
+
+
+            <div class="brand-content">
+
+
+                <!-- ÍCONE -->
+
+                <div class="brand-icon">
+
+                    <i class="fa-solid fa-building-columns"></i>
+
+                </div>
+
+
+                <!-- IDENTIFICAÇÃO -->
+
+                <span class="brand-label">
+                    CARTÓRIO DA MOTA
+                </span>
+
+
+                <!-- TÍTULO -->
+
+                <h1>
+                    Área<br>
+                    <strong>Restrita</strong>
+                </h1>
+
+
+                <p>
+                    Ambiente exclusivo para acesso aos
+                    recursos administrativos do Cartório.
+                </p>
+
+
+                <!-- SEGURANÇA -->
+
+                <div class="brand-security">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <span>
+                        Ambiente protegido
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- DECORAÇÕES -->
+
+            <div class="brand-decoration decoration-one"></div>
+
+            <div class="brand-decoration decoration-two"></div>
+
+            <div class="brand-decoration decoration-three"></div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             PAINEL DE LOGIN
+        ================================================== -->
+
+        <section class="login-section">
+
+
+            <div class="login-container">
+
+
+                <!-- =================================================
+                     CABEÇALHO
+                ================================================== -->
+
+                <div class="login-heading">
+
+                    <span>
+                        ACESSO INTERNO
+                    </span>
+
+                    <h2>
+                        Bem-vindo
+                    </h2>
+
+                    <p>
+                        Entre com suas credenciais para
+                        acessar a área restrita.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     FORMULÁRIO
+                ================================================== -->
+
+                <form
+                    id="loginForm"
+                    class="login-form"
+                >
+
+
+                    <!-- USUÁRIO -->
+
+                    <div class="input-group">
+
+                        <label for="usuario">
+                            Usuário
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-regular fa-user"></i>
+
+                            <input
+                                type="text"
+                                id="usuario"
+                                name="usuario"
+                                placeholder="Digite seu usuário"
+                                autocomplete="username"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- SENHA -->
+
+                    <div class="input-group">
+
+                        <label for="senha">
+                            Senha
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="senha"
+                                name="senha"
+                                placeholder="Digite sua senha"
+                                autocomplete="current-password"
+                                required
+                            >
+
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                                class="toggle-password"
+                                aria-label="Mostrar senha"
+                            >
+
+                                <i class="fa-regular fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         OPÇÕES
+                    ================================================== -->
+
+                    <div class="login-options">
+
+
+                        <label class="remember">
+
+                            <input
+                                type="checkbox"
+                                id="lembrar"
+                            >
+
+                            <span>
+                                Lembrar acesso
+                            </span>
+
+                        </label>
+
+
+                        <button
+                            type="button"
+                            id="forgotPassword"
+                            class="forgot-password"
+                        >
+                            Esqueci minha senha
+                        </button>
+
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         MENSAGEM
+                    ================================================== -->
+
+                    <div
+                        id="loginMessage"
+                        class="login-message"
+                        role="alert"
+                    ></div>
+
+
+
+                    <!-- =================================================
+                         BOTÃO
+                    ================================================== -->
+
+                    <button
+                        type="submit"
+                        class="login-button"
+                    >
+
+                        <span>
+                            Entrar
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+
+                </form>
+
+
+
+                <!-- =================================================
+                     SEGURANÇA
+                ================================================== -->
+
+                <div class="login-security">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+
+                    <div>
+
+                        <strong>
+                            Acesso protegido
+                        </strong>
+
+                        <p>
+                            Esta área é destinada exclusivamente
+                            aos usuários autorizados.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     VOLTAR AO PORTAL
+                ================================================== -->
+
+                <a
+                    href="../../index.html"
+                    class="back-home"
+                >
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Voltar para o Portal
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="restrito.js"></script>
+
+</body>
+
+</html>

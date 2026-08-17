@@ -1,0 +1,539 @@
+/* =========================================================
+   EMOLUMENTOS - CARTÓRIO DA MOTA
+   PADRÃO VISUAL DO PORTAL
+   Header Universal: ../../css/header.css
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --verde: #38BA5E;
+    --verde-escuro: #168A40;
+    --verde-claro: #67D987;
+    --verde-suave: #EAF8EE;
+
+    --preto: #050705;
+    --branco: #FFFFFF;
+
+    --texto: #171B18;
+    --texto-suave: #68736D;
+    --cinza-borda: #E3E8E5;
+
+    --transicao: 0.25s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Inter", sans-serif;
+    color: var(--texto);
+    background: var(--branco);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   HERO
+   Mesmo padrão visual da página Certidões.
+========================================================= */
+
+.hero {
+    width: 100%;
+    min-height: 525px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 70px 20px 80px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(56, 186, 94, 0.18),
+            transparent 38%
+        ),
+        linear-gradient(
+            180deg,
+            #F7FAF8,
+            #FFFFFF
+        );
+
+    border-bottom: 1px solid var(--cinza-borda);
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 850px;
+}
+
+/* =========================================================
+   ÍCONE
+   Sempre logo abaixo do Header Universal.
+========================================================= */
+
+.hero-icon {
+    width: 92px;
+    height: 92px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 25px;
+
+    background: var(--preto);
+    color: var(--verde);
+
+    font-size: 40px;
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.16);
+}
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.hero-label {
+    display: inline-block;
+
+    color: var(--verde-escuro);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.hero h1 {
+    margin-top: 8px;
+
+    color: var(--preto);
+
+    font-size:
+        clamp(
+            48px,
+            6vw,
+            76px
+        );
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--verde);
+}
+
+/* =========================================================
+   DESCRIÇÃO
+========================================================= */
+
+.hero p {
+    max-width: 700px;
+
+    margin: 25px auto 0;
+
+    color: var(--texto-suave);
+
+    font-size: 18px;
+    line-height: 1.65;
+}
+
+/* =========================================================
+   ÁREA DOS EMOLUMENTOS
+========================================================= */
+
+.emolumentos-content {
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    padding: 55px 20px 80px;
+}
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.botao {
+    width: 100%;
+    min-height: 88px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 15px 18px;
+
+    background: #FFFFFF;
+
+    border: 1px solid var(--cinza-borda);
+    border-radius: 18px;
+
+    text-decoration: none;
+
+    color: var(--texto);
+
+    box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform var(--transicao),
+        box-shadow var(--transicao),
+        border-color var(--transicao),
+        background var(--transicao);
+
+    position: relative;
+    overflow: hidden;
+}
+
+.botao:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(56, 186, 94, 0.45);
+
+    box-shadow:
+        0 18px 38px rgba(0, 0, 0, 0.10),
+        0 0 25px rgba(56, 186, 94, 0.08);
+}
+
+.botao:active {
+    transform: translateY(-1px);
+}
+
+/* Linha verde lateral */
+
+.botao::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 50%;
+
+    width: 3px;
+    height: 0;
+
+    transform: translateY(-50%);
+
+    background: var(--verde);
+
+    border-radius: 0 5px 5px 0;
+
+    transition: height var(--transicao);
+}
+
+.botao:hover::before {
+    height: 48%;
+}
+
+/* =========================================================
+   ÍCONE PLAY
+========================================================= */
+
+.icone {
+    width: 64px;
+    height: 64px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-left: 3px;
+
+    border-radius: 17px;
+
+    background: var(--verde);
+
+    color: var(--preto);
+
+    font-size: 19px;
+
+    box-shadow:
+        0 10px 25px rgba(56, 186, 94, 0.22);
+
+    transition:
+        transform var(--transicao),
+        background var(--transicao),
+        box-shadow var(--transicao);
+}
+
+.botao:hover .icone {
+    background: var(--verde-escuro);
+    color: var(--branco);
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 12px 28px rgba(56, 186, 94, 0.25);
+}
+
+/* =========================================================
+   TEXTO DO CARD
+========================================================= */
+
+.texto-botao {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 0 18px;
+}
+
+.texto-botao strong {
+    color: var(--texto);
+
+    font-size: 15px;
+    font-weight: 800;
+
+    line-height: 1.35;
+
+    text-align: left;
+}
+
+.texto-botao span {
+    margin-top: 5px;
+
+    color: var(--texto-suave);
+
+    font-size: 13px;
+    line-height: 1.4;
+
+    text-align: left;
+}
+
+/* =========================================================
+   SETA
+========================================================= */
+
+.seta {
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: var(--verde-escuro);
+
+    background: rgba(56, 186, 94, 0.07);
+
+    border: 1px solid rgba(56, 186, 94, 0.18);
+
+    font-size: 20px;
+
+    transition:
+        transform var(--transicao),
+        background var(--transicao),
+        color var(--transicao);
+}
+
+.botao:hover .seta {
+    transform: translateX(4px);
+
+    background: var(--verde);
+    color: var(--preto);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        min-height: 500px;
+    }
+
+    .emolumentos-content {
+        max-width: 760px;
+    }
+}
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: 500px;
+        padding: 60px 20px 70px;
+    }
+
+    .hero-icon {
+        width: 78px;
+        height: 78px;
+
+        margin-bottom: 20px;
+
+        border-radius: 21px;
+
+        font-size: 32px;
+    }
+
+    .hero-label {
+        font-size: 9px;
+        letter-spacing: 2.5px;
+    }
+
+    .hero h1 {
+        font-size:
+            clamp(
+                42px,
+                13vw,
+                54px
+            );
+
+        letter-spacing: -2px;
+    }
+
+    .hero p {
+        max-width: 340px;
+
+        margin: 20px auto 0;
+
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .emolumentos-content {
+        padding: 42px 16px 60px;
+    }
+
+    .botao {
+        min-height: 76px;
+        padding: 10px;
+        border-radius: 16px;
+    }
+
+    .icone {
+        width: 48px;
+        height: 48px;
+
+        border-radius: 13px;
+
+        font-size: 16px;
+    }
+
+    .texto-botao {
+        padding: 0 10px;
+    }
+
+    .texto-botao strong {
+        font-size: 12px;
+    }
+
+    .texto-botao span {
+        font-size: 11px;
+    }
+
+    .seta {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    footer {
+        margin-top: 30px;
+    }
+}
+
+/* =========================================================
+   CELULARES PEQUENOS
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .hero {
+        padding: 52px 15px 60px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .emolumentos-content {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .texto-botao strong {
+        font-size: 11px;
+    }
+
+    .texto-botao span {
+        font-size: 10px;
+    }
+
+    .seta {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* =========================================================
+   ACESSIBILIDADE
+========================================================= */
+
+.botao:focus-visible {
+    outline: 3px solid rgba(56, 186, 94, 0.45);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

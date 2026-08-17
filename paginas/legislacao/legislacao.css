@@ -1,0 +1,980 @@
+/* =========================================================
+   LEGISLAÇÃO
+   Cartório da Mota
+========================================================= */
+
+:root {
+    --verde: #35bd61;
+    --verde-escuro: #062b16;
+    --verde-profundo: #03150b;
+    --preto: #050706;
+    --texto: #101312;
+    --texto-secundario: #66716b;
+    --fundo: #f1f8f4;
+    --branco: #ffffff;
+    --borda: #dce8e1;
+    --sombra: 0 18px 45px rgba(5, 30, 15, 0.07);
+}
+
+
+/* =========================================================
+   RESET DA PÁGINA
+========================================================= */
+
+.legislacao-page {
+    width: 100%;
+    overflow: hidden;
+    background: var(--fundo);
+}
+
+.legislacao-page *,
+.legislacao-page *::before,
+.legislacao-page *::after {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.legislacao-hero {
+    position: relative;
+    min-height: 535px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 90px 20px 80px;
+
+    background:
+        radial-gradient(
+            circle at 15% 35%,
+            rgba(53, 189, 97, 0.13),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 88% 15%,
+            rgba(53, 189, 97, 0.10),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #f4faf7 0%,
+            #edf7f1 50%,
+            #f7faf8 100%
+        );
+}
+
+
+/* círculos decorativos */
+
+.legislacao-hero::before,
+.legislacao-hero::after {
+    content: "";
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: rgba(53, 189, 97, 0.07);
+
+    pointer-events: none;
+}
+
+.legislacao-hero::before {
+    width: 330px;
+    height: 330px;
+
+    left: -120px;
+    bottom: -170px;
+}
+
+.legislacao-hero::after {
+    width: 390px;
+    height: 390px;
+
+    right: -150px;
+    top: -190px;
+}
+
+
+/* =========================================================
+   ÍCONE DO HERO
+========================================================= */
+
+.legislacao-hero-icon {
+    position: relative;
+    z-index: 2;
+
+    width: 120px;
+    height: 120px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 28px;
+
+    border-radius: 30px;
+
+    background: #050706;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.13),
+        0 0 0 1px rgba(53, 189, 97, 0.08);
+}
+
+.legislacao-hero-icon i {
+    font-size: 52px;
+    color: var(--verde);
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.legislacao-label {
+    position: relative;
+    z-index: 2;
+
+    margin-bottom: 16px;
+
+    color: #159447;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+
+/* =========================================================
+   TÍTULO HERO
+========================================================= */
+
+.legislacao-hero h1 {
+    position: relative;
+    z-index: 2;
+
+    margin: 0;
+
+    color: #050706;
+
+    font-size: clamp(48px, 6vw, 82px);
+    font-weight: 900;
+
+    line-height: 1.03;
+    letter-spacing: -3px;
+}
+
+.legislacao-hero p {
+    position: relative;
+    z-index: 2;
+
+    max-width: 850px;
+
+    margin: 28px auto 0;
+
+    color: #66716b;
+
+    font-size: 18px;
+    font-weight: 400;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+.legislacao-content {
+    background: var(--fundo);
+
+    padding: 90px 20px 100px;
+}
+
+.legislacao-container {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.legislacao-intro {
+    max-width: 850px;
+
+    margin-bottom: 45px;
+}
+
+.section-label {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: #159447;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.legislacao-intro h2,
+.section-heading h2 {
+    margin: 0 0 15px;
+
+    color: #080b09;
+
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 900;
+
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+}
+
+.legislacao-intro p,
+.section-heading p {
+    max-width: 760px;
+
+    margin: 0;
+
+    color: var(--texto-secundario);
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BUSCA
+========================================================= */
+
+.legislacao-search {
+    margin-bottom: 25px;
+}
+
+.legislacao-search-box {
+    width: 100%;
+
+    min-height: 68px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 0 25px;
+
+    background: var(--branco);
+
+    border: 1px solid var(--borda);
+
+    border-radius: 18px;
+
+    box-shadow: 0 10px 30px rgba(0, 30, 15, 0.04);
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.legislacao-search-box:focus-within {
+    border-color: var(--verde);
+
+    box-shadow:
+        0 0 0 4px rgba(53, 189, 97, 0.10),
+        0 12px 35px rgba(0, 30, 15, 0.06);
+}
+
+.legislacao-search-box i {
+    color: #159447;
+
+    font-size: 19px;
+}
+
+.legislacao-search-box input {
+    width: 100%;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    color: #101312;
+
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.legislacao-search-box input::placeholder {
+    color: #9aa59f;
+}
+
+
+/* =========================================================
+   FILTROS
+========================================================= */
+
+.legislacao-filtros {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 80px;
+}
+
+.filtro-legislacao {
+    border: 1px solid var(--borda);
+
+    padding: 12px 20px;
+
+    border-radius: 100px;
+
+    background: var(--branco);
+
+    color: #59645e;
+
+    font-family: inherit;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.filtro-legislacao:hover {
+    border-color: var(--verde);
+
+    color: #159447;
+
+    transform: translateY(-2px);
+}
+
+.filtro-legislacao.active {
+    border-color: var(--verde);
+
+    background: var(--verde);
+
+    color: #050706;
+}
+
+
+/* =========================================================
+   CABEÇALHOS DE SEÇÃO
+========================================================= */
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   HIERARQUIA
+========================================================= */
+
+.hierarquia-section {
+    margin-bottom: 90px;
+}
+
+.hierarquia-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.hierarquia-card {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 20px;
+
+    min-height: 150px;
+
+    padding: 28px;
+
+    background: var(--branco);
+
+    border: 1px solid var(--borda);
+
+    border-radius: 22px;
+
+    box-shadow: 0 10px 30px rgba(0, 30, 15, 0.035);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.hierarquia-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(53, 189, 97, 0.45);
+
+    box-shadow: var(--sombra);
+}
+
+.hierarquia-numero {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 15px;
+
+    background: #050706;
+
+    color: var(--verde);
+
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.hierarquia-card h3 {
+    margin: 3px 0 8px;
+
+    color: #0b0e0c;
+
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.hierarquia-card p {
+    margin: 0;
+
+    color: var(--texto-secundario);
+
+    font-size: 14px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   LISTA DE NORMAS
+========================================================= */
+
+.normas-section {
+    margin-bottom: 70px;
+}
+
+.normas-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   CARD DE NORMA
+========================================================= */
+
+.norma-card {
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 22px;
+
+    padding: 28px;
+
+    min-height: 255px;
+
+    background: var(--branco);
+
+    border: 1px solid var(--borda);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 30, 15, 0.04);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.norma-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(53, 189, 97, 0.45);
+
+    box-shadow:
+        0 18px 45px rgba(0, 30, 15, 0.08);
+}
+
+
+/* =========================================================
+   ÍCONE DA NORMA
+========================================================= */
+
+.norma-icon {
+    flex-shrink: 0;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: #050706;
+
+    color: var(--verde);
+
+    font-size: 21px;
+}
+
+
+/* =========================================================
+   CONTEÚDO DA NORMA
+========================================================= */
+
+.norma-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.norma-category {
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    color: #159447;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.norma-content h3 {
+    margin: 0 0 10px;
+
+    color: #090c0a;
+
+    font-size: 19px;
+    font-weight: 850;
+
+    line-height: 1.3;
+}
+
+.norma-content p {
+    margin: 0 0 20px;
+
+    color: var(--texto-secundario);
+
+    font-size: 14px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   BOTÃO NORMA
+========================================================= */
+
+.norma-button {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 11px 15px;
+
+    border-radius: 10px;
+
+    background: var(--verde);
+
+    color: #050706;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.norma-button:hover {
+    background: #2eab57;
+
+    transform: translateY(-2px);
+}
+
+.norma-button i {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   SEM RESULTADOS
+========================================================= */
+
+.normas-empty {
+    width: 100%;
+
+    padding: 60px 25px;
+
+    text-align: center;
+
+    background: var(--branco);
+
+    border: 1px solid var(--borda);
+
+    border-radius: 22px;
+}
+
+.normas-empty-icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 18px;
+
+    border-radius: 16px;
+
+    background: #050706;
+
+    color: var(--verde);
+
+    font-size: 21px;
+}
+
+.normas-empty h3 {
+    margin: 0 0 8px;
+
+    color: #0b0e0c;
+
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.normas-empty p {
+    margin: 0;
+
+    color: var(--texto-secundario);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   AVISO
+========================================================= */
+
+.legislacao-nota {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 16px;
+
+    padding: 22px 25px;
+
+    background: #e8f5ed;
+
+    border: 1px solid #c9e7d4;
+
+    border-radius: 18px;
+}
+
+.legislacao-nota i {
+    flex-shrink: 0;
+
+    margin-top: 3px;
+
+    color: #159447;
+
+    font-size: 18px;
+}
+
+.legislacao-nota p {
+    margin: 0;
+
+    color: #506058;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   CARD ESCONDIDO PELO JS
+========================================================= */
+
+.norma-card.hidden {
+    display: none;
+}
+
+
+/* =========================================================
+   ANIMAÇÃO
+========================================================= */
+
+.norma-card,
+.hierarquia-card {
+    animation: legislacaoEntrada 0.5s ease both;
+}
+
+@keyframes legislacaoEntrada {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .legislacao-hero {
+        min-height: 470px;
+
+        padding-top: 70px;
+    }
+
+    .legislacao-hero-icon {
+        width: 100px;
+        height: 100px;
+
+        border-radius: 25px;
+    }
+
+    .legislacao-hero-icon i {
+        font-size: 43px;
+    }
+
+    .hierarquia-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .normas-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .legislacao-hero {
+        min-height: 430px;
+
+        padding:
+            55px 20px
+            65px;
+    }
+
+    .legislacao-hero::before {
+        width: 230px;
+        height: 230px;
+
+        left: -120px;
+        bottom: -100px;
+    }
+
+    .legislacao-hero::after {
+        width: 250px;
+        height: 250px;
+
+        right: -120px;
+        top: -110px;
+    }
+
+    .legislacao-hero-icon {
+        width: 88px;
+        height: 88px;
+
+        margin-bottom: 22px;
+
+        border-radius: 23px;
+    }
+
+    .legislacao-hero-icon i {
+        font-size: 37px;
+    }
+
+    .legislacao-label {
+        font-size: 10px;
+
+        letter-spacing: 3px;
+    }
+
+    .legislacao-hero h1 {
+        font-size: 48px;
+
+        letter-spacing: -2px;
+    }
+
+    .legislacao-hero p {
+        margin-top: 20px;
+
+        font-size: 15px;
+
+        line-height: 1.6;
+    }
+
+    .legislacao-content {
+        padding:
+            60px 15px
+            70px;
+    }
+
+    .legislacao-intro h2,
+    .section-heading h2 {
+        font-size: 34px;
+    }
+
+    .legislacao-intro p,
+    .section-heading p {
+        font-size: 15px;
+    }
+
+    .legislacao-search-box {
+        min-height: 60px;
+
+        padding: 0 18px;
+
+        border-radius: 15px;
+    }
+
+    .legislacao-search-box input {
+        font-size: 14px;
+    }
+
+    .legislacao-filtros {
+        gap: 8px;
+
+        margin-bottom: 60px;
+    }
+
+    .filtro-legislacao {
+        padding: 10px 15px;
+
+        font-size: 12px;
+    }
+
+    .hierarquia-section {
+        margin-bottom: 65px;
+    }
+
+    .hierarquia-card {
+        padding: 22px;
+
+        border-radius: 18px;
+    }
+
+    .hierarquia-numero {
+        width: 46px;
+        height: 46px;
+    }
+
+    .norma-card {
+        flex-direction: column;
+
+        padding: 23px;
+
+        border-radius: 19px;
+
+        gap: 17px;
+    }
+
+    .norma-icon {
+        width: 52px;
+        height: 52px;
+
+        border-radius: 14px;
+    }
+
+    .norma-content h3 {
+        font-size: 17px;
+    }
+
+    .norma-content p {
+        font-size: 13px;
+    }
+
+    .legislacao-nota {
+        padding: 18px;
+
+        gap: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .legislacao-hero h1 {
+        font-size: 42px;
+    }
+
+    .legislacao-content {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .legislacao-filtros {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filtro-legislacao {
+        width: 100%;
+    }
+
+}

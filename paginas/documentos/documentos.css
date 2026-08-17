@@ -1,0 +1,2133 @@
+/* =========================================================
+   CARTÓRIO DA MOTA
+   DOCUMENTOS NECESSÁRIOS
+   BASE VISUAL: PÁGINA DE CERTIDÕES
+========================================================= */
+
+:root {
+    --verde: #38BA5E;
+    --verde-escuro: #168A40;
+
+    --preto: #050705;
+    --preto-total: #000000;
+
+    --branco: #ffffff;
+
+    --cinza: #f5f7f6;
+    --cinza-borda: #e5eae7;
+
+    --texto: #161b18;
+    --texto-suave: #66716b;
+
+    --raio: 18px;
+
+    --sombra:
+        0 15px 40px rgba(0, 0, 0, 0.08);
+
+    --transicao:
+        0.3s ease;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    background: var(--branco);
+
+    color: var(--texto);
+
+    line-height: 1.6;
+}
+
+main {
+    flex: 1;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   HERO
+   MESMA LINGUAGEM DAS CERTIDÕES
+========================================================= */
+
+.hero {
+    min-height: 570px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 70px 20px 80px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(
+                56,
+                186,
+                94,
+                0.18
+            ),
+            transparent 38%
+        ),
+        linear-gradient(
+            180deg,
+            #f7faf8,
+            #ffffff
+        );
+
+    border-bottom:
+        1px solid
+        var(--cinza-borda);
+}
+
+.hero-content {
+    max-width: 850px;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   ÍCONE DO HERO
+========================================================= */
+
+.hero-icon {
+    width: 92px;
+    height: 92px;
+
+    margin:
+        0 auto 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 25px;
+
+    background: var(--preto);
+
+    color: var(--verde);
+
+    font-size: 40px;
+
+    box-shadow:
+        0 18px 40px
+        rgba(
+            0,
+            0,
+            0,
+            0.16
+        );
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.hero-label,
+.eyebrow {
+    color: var(--verde-escuro);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.hero h1 {
+    margin-top: 8px;
+
+    color: var(--preto);
+
+    font-size:
+        clamp(
+            48px,
+            6vw,
+            76px
+        );
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+}
+
+.hero p {
+    max-width: 700px;
+
+    margin:
+        25px auto 32px;
+
+    color: var(--texto-suave);
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   BOTÕES HERO
+========================================================= */
+
+.hero-buttons,
+.hero-actions {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+    min-height: 56px;
+
+    padding:
+        0 26px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border-radius: 11px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition:
+        transform var(--transicao),
+        box-shadow var(--transicao),
+        background var(--transicao);
+}
+
+.btn-primary {
+    color: var(--branco);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--verde),
+            var(--verde-escuro)
+        );
+
+    box-shadow:
+        0 12px 28px
+        rgba(
+            22,
+            138,
+            64,
+            0.25
+        );
+}
+
+.btn-primary:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 18px 35px
+        rgba(
+            22,
+            138,
+            64,
+            0.32
+        );
+}
+
+.btn-secondary {
+    background: var(--branco);
+
+    border:
+        1px solid
+        var(--cinza-borda);
+
+    color: var(--texto);
+}
+
+.btn-secondary:hover {
+    border-color:
+        var(--verde);
+
+    color:
+        var(--verde-escuro);
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* =========================================================
+   PESQUISA
+========================================================= */
+
+.search-box {
+    width:
+        min(
+            760px,
+            100%
+        );
+
+    margin:
+        30px auto 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 6px;
+
+    background:
+        var(--branco);
+
+    border:
+        1px solid
+        var(--cinza-borda);
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(
+            0,
+            0,
+            0,
+            0.06
+        );
+
+    transition:
+        border-color
+        var(--transicao),
+        box-shadow
+        var(--transicao);
+}
+
+.search-box:focus-within {
+    border-color:
+        var(--verde);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(
+            56,
+            186,
+            94,
+            0.10
+        );
+}
+
+.search-box > i {
+    margin-left: 14px;
+
+    color:
+        var(--verde-escuro);
+
+    font-size: 15px;
+}
+
+.search-box input {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 46px;
+
+    padding:
+        0 8px;
+
+    border: 0;
+
+    outline: none;
+
+    background:
+        transparent;
+
+    color:
+        var(--texto);
+
+    font-size: 13px;
+}
+
+.search-box input::placeholder {
+    color:
+        #9aa49e;
+}
+
+.search-box button {
+    min-height: 42px;
+
+    padding:
+        0 14px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    border-radius: 9px;
+
+    background:
+        var(--cinza);
+
+    color:
+        var(--texto-suave);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        var(--transicao);
+}
+
+.search-box button:hover {
+    background:
+        var(--verde);
+
+    color:
+        var(--preto);
+}
+
+
+/* =========================================================
+   SEÇÃO DOS DOCUMENTOS
+========================================================= */
+
+.documents-section {
+    width:
+        min(
+            1100px,
+            92%
+        );
+
+    margin:
+        0 auto;
+
+    padding:
+        90px 0;
+}
+
+.documents-header {
+    max-width: 700px;
+
+    margin:
+        0 auto 40px;
+
+    text-align: center;
+}
+
+.documents-header span {
+    color:
+        var(--verde-escuro);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.documents-header h2 {
+    margin-top: 8px;
+
+    color:
+        var(--preto);
+
+    font-size:
+        clamp(
+            30px,
+            4vw,
+            42px
+        );
+
+    line-height: 1.15;
+}
+
+.documents-header p {
+    margin-top: 12px;
+
+    color:
+        var(--texto-suave);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.toolbar {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+
+    padding: 12px 15px;
+
+    background:
+        var(--cinza);
+
+    border:
+        1px solid
+        var(--cinza-borda);
+
+    border-radius:
+        12px;
+}
+
+.result-count {
+    color:
+        var(--texto-suave);
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+}
+
+.result-count i {
+    color:
+        var(--verde-escuro);
+
+    margin-right:
+        5px;
+}
+
+.toolbar-actions {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+}
+
+.toolbar-actions button {
+    min-height:
+        38px;
+
+    padding:
+        0 13px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    border:
+        1px solid
+        var(--cinza-borda);
+
+    border-radius:
+        9px;
+
+    background:
+        var(--branco);
+
+    color:
+        var(--texto);
+
+    font-size:
+        10px;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
+
+    transition:
+        var(--transicao);
+}
+
+.toolbar-actions button:hover {
+    border-color:
+        var(--verde);
+
+    color:
+        var(--verde-escuro);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   LISTA
+========================================================= */
+
+.documents {
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        12px;
+}
+
+
+/* =========================================================
+   CARD DO ATO
+========================================================= */
+
+.doc-card {
+    overflow:
+        hidden;
+
+    background:
+        var(--branco);
+
+    border:
+        1px solid
+        var(--cinza-borda);
+
+    border-radius:
+        var(--raio);
+
+    box-shadow:
+        var(--sombra);
+
+    transition:
+        transform
+        var(--transicao),
+        border-color
+        var(--transicao),
+        box-shadow
+        var(--transicao);
+}
+
+.doc-card:hover {
+    border-color:
+        rgba(
+            56,
+            186,
+            94,
+            0.45
+        );
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 18px 42px
+        rgba(
+            0,
+            0,
+            0,
+            0.09
+        );
+}
+
+.doc-card.active {
+    border-color:
+        var(--verde);
+
+    box-shadow:
+        0 18px 45px
+        rgba(
+            0,
+            0,
+            0,
+            0.10
+        );
+}
+
+
+/* =========================================================
+   BOTÃO / CABEÇALHO DO ATO
+========================================================= */
+
+.doc-toggle {
+    width: 100%;
+
+    min-height:
+        82px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        52px
+        minmax(0, 1fr)
+        42px;
+
+    align-items:
+        center;
+
+    gap:
+        18px;
+
+    padding:
+        16px 18px;
+
+    background:
+        var(--branco);
+
+    color:
+        var(--texto);
+
+    text-align:
+        left;
+
+    cursor:
+        pointer;
+
+    transition:
+        background
+        var(--transicao);
+}
+
+.doc-toggle:hover {
+    background:
+        #fbfcfb;
+}
+
+
+/* =========================================================
+   QUADRADO VERDE DO NÚMERO
+========================================================= */
+
+.doc-number {
+    width:
+        48px;
+
+    height:
+        48px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        12px;
+
+    background:
+        var(--verde);
+
+    color:
+        var(--preto);
+
+    font-size:
+        13px;
+
+    font-weight:
+        900;
+
+    box-shadow:
+        0 8px 20px
+        rgba(
+            56,
+            186,
+            94,
+            0.22
+        );
+
+    transition:
+        var(--transicao);
+}
+
+.doc-card:hover .doc-number {
+    background:
+        var(--verde-escuro);
+
+    color:
+        var(--branco);
+
+    transform:
+        translateY(-2px);
+}
+
+.doc-card.active .doc-number {
+    background:
+        var(--preto);
+
+    color:
+        var(--verde);
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.doc-title {
+    min-width:
+        0;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        4px;
+
+    color:
+        var(--preto);
+
+    font-size:
+        16px;
+
+    font-weight:
+        800;
+
+    line-height:
+        1.3;
+}
+
+.doc-title small {
+    color:
+        var(--texto-suave);
+
+    font-size:
+        12px;
+
+    font-weight:
+        500;
+
+    line-height:
+        1.45;
+}
+
+
+/* =========================================================
+   BOTÃO +
+========================================================= */
+
+.doc-icon {
+    width:
+        40px;
+
+    height:
+        40px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        11px;
+
+    background:
+        rgba(
+            56,
+            186,
+            94,
+            0.12
+        );
+
+    color:
+        var(--verde-escuro);
+
+    font-size:
+        23px;
+
+    line-height:
+        1;
+
+    transition:
+        transform
+        var(--transicao),
+        background
+        var(--transicao),
+        color
+        var(--transicao);
+}
+
+.doc-card:hover .doc-icon {
+    background:
+        var(--verde);
+
+    color:
+        var(--preto);
+}
+
+.doc-card.active .doc-icon {
+    background:
+        var(--preto);
+
+    color:
+        var(--verde);
+
+    transform:
+        rotate(45deg);
+}
+
+
+/* =========================================================
+   EXPANSÃO
+========================================================= */
+
+.doc-content {
+    display:
+        grid;
+
+    grid-template-rows:
+        0fr;
+
+    transition:
+        grid-template-rows
+        0.35s ease;
+}
+
+.doc-card.active .doc-content {
+    grid-template-rows:
+        1fr;
+}
+
+.doc-content > .doc-body {
+    min-height:
+        0;
+
+    overflow:
+        hidden;
+}
+
+
+/* =========================================================
+   CONTEÚDO DO ATO
+========================================================= */
+
+.doc-body {
+    padding:
+        0 28px 30px 88px;
+
+    color:
+        var(--texto-suave);
+
+    font-size:
+        14px;
+
+    line-height:
+        1.75;
+}
+
+.doc-body p {
+    margin-bottom:
+        16px;
+}
+
+.doc-body h3 {
+    margin:
+        22px 0 10px;
+
+    color:
+        var(--preto);
+
+    font-size:
+        16px;
+
+    font-weight:
+        800;
+}
+
+.doc-body ol,
+.doc-body ul {
+    margin:
+        10px 0 20px;
+
+    padding-left:
+        24px;
+}
+
+.doc-body li {
+    margin-bottom:
+        8px;
+}
+
+.doc-body li::marker {
+    color:
+        var(--verde-escuro);
+
+    font-weight:
+        900;
+}
+
+
+/* =========================================================
+   BASE LEGAL
+   MESMO ESTILO DA MATRIZ
+========================================================= */
+
+.legal-box {
+    margin-top:
+        24px;
+
+    padding:
+        22px;
+
+    background:
+        #f7faf8;
+
+    border:
+        1px solid
+        var(--cinza-borda);
+
+    border-radius:
+        16px;
+}
+
+.legal-box-title {
+    margin-bottom:
+        13px;
+
+    color:
+        var(--preto);
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1.5px;
+
+    text-transform:
+        uppercase;
+}
+
+.legal-tags {
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        7px;
+}
+
+.legal-tag {
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    padding:
+        7px 11px;
+
+    background:
+        var(--branco);
+
+    border:
+        1px solid
+        var(--cinza-borda);
+
+    border-radius:
+        9px;
+
+    color:
+        var(--verde-escuro);
+
+    font-size:
+        10px;
+
+    font-weight:
+        800;
+}
+
+
+/* =========================================================
+   CARDS ESCONDIDOS PELA PESQUISA
+========================================================= */
+
+.doc-card.hidden {
+    display:
+        none;
+}
+
+
+/* =========================================================
+   ÁREA DE AJUDA
+   IGUAL À MATRIZ DE CERTIDÕES
+========================================================= */
+
+.help-section {
+    width:
+        min(
+            1100px,
+            92%
+        );
+
+    margin:
+        0 auto 80px;
+
+    padding:
+        35px;
+
+    border-radius:
+        22px;
+
+    background:
+        radial-gradient(
+            circle at 10% 0%,
+            rgba(
+                56,
+                186,
+                94,
+                0.25
+            ),
+            transparent 35%
+        ),
+        var(--preto);
+
+    color:
+        var(--branco);
+}
+
+.help-content {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        25px;
+}
+
+.help-icon {
+    width:
+        70px;
+
+    height:
+        70px;
+
+    flex-shrink:
+        0;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        18px;
+
+    background:
+        var(--verde);
+
+    color:
+        var(--preto);
+
+    font-size:
+        34px;
+}
+
+.help-text {
+    flex:
+        1;
+}
+
+.help-text span,
+.help-label {
+    color:
+        var(--verde);
+
+    font-size:
+        10px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        2px;
+}
+
+.help-text h2 {
+    margin-top:
+        4px;
+
+    font-size:
+        25px;
+}
+
+.help-text p {
+    max-width:
+        600px;
+
+    margin-top:
+        5px;
+
+    color:
+        #aeb8b2;
+
+    font-size:
+        13px;
+}
+
+.whatsapp-button {
+    padding:
+        15px 20px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    flex-shrink:
+        0;
+
+    border-radius:
+        10px;
+
+    background:
+        var(--verde);
+
+    color:
+        var(--preto);
+
+    font-size:
+        13px;
+
+    font-weight:
+        800;
+
+    transition:
+        transform
+        var(--transicao),
+        background
+        var(--transicao);
+}
+
+.whatsapp-button:hover {
+    background:
+        var(--branco);
+
+    transform:
+        translateY(-3px);
+}
+
+.whatsapp-button i {
+    font-size:
+        17px;
+}
+
+
+/* =========================================================
+   RODAPÉ
+   IGUAL À MATRIZ DE CERTIDÕES
+========================================================= */
+
+.footer {
+    width:
+        100%;
+
+    background:
+        var(--preto);
+
+    color:
+        var(--branco);
+}
+
+.footer-container,
+.footer-inner {
+    width:
+        min(
+            1100px,
+            92%
+        );
+
+    margin:
+        0 auto;
+
+    padding:
+        55px 0;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1.5fr 1fr;
+
+    gap:
+        50px;
+}
+
+.footer-brand h3 {
+    color:
+        var(--verde);
+
+    font-size:
+        22px;
+}
+
+.footer-brand p {
+    max-width:
+        430px;
+
+    margin-top:
+        10px;
+
+    color:
+        #9da79f;
+
+    font-size:
+        13px;
+}
+
+.footer-contact h4 {
+    margin-bottom:
+        15px;
+
+    font-size:
+        15px;
+}
+
+.footer-contact p {
+    margin-bottom:
+        8px;
+
+    color:
+        #aeb8b2;
+
+    font-size:
+        13px;
+}
+
+.footer-contact i {
+    width:
+        20px;
+
+    color:
+        var(--verde);
+}
+
+.footer-contact a {
+    color:
+        inherit;
+}
+
+.footer-contact a:hover {
+    color:
+        var(--verde);
+}
+
+.footer-bottom {
+    padding:
+        20px;
+
+    background:
+        var(--preto-total);
+
+    border-top:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    color:
+        #717a74;
+
+    text-align:
+        center;
+
+    font-size:
+        11px;
+}
+
+
+/* =========================================================
+   WHATSAPP FLUTUANTE
+========================================================= */
+
+.floating-whatsapp {
+    position:
+        fixed;
+
+    right:
+        25px;
+
+    bottom:
+        25px;
+
+    width:
+        58px;
+
+    height:
+        58px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--verde);
+
+    color:
+        var(--preto);
+
+    font-size:
+        27px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(
+            0,
+            0,
+            0,
+            0.25
+        );
+
+    z-index:
+        999;
+
+    transition:
+        transform
+        var(--transicao);
+}
+
+.floating-whatsapp:hover {
+    transform:
+        scale(1.08);
+
+    background:
+        var(--verde-escuro);
+
+    color:
+        var(--branco);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .help-content {
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+    }
+
+    .whatsapp-button {
+        width:
+            100%;
+
+        justify-content:
+            center;
+    }
+
+    .footer-container,
+    .footer-inner {
+        grid-template-columns:
+            1fr;
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height:
+            500px;
+
+        padding:
+            60px 20px 70px;
+    }
+
+    .hero-icon {
+        width:
+            78px;
+
+        height:
+            78px;
+
+        margin-bottom:
+            20px;
+
+        border-radius:
+            21px;
+
+        font-size:
+            32px;
+    }
+
+    .hero-label,
+    .eyebrow {
+        font-size:
+            9px;
+
+        letter-spacing:
+            2.5px;
+    }
+
+    .hero h1 {
+        font-size:
+            clamp(
+                42px,
+                13vw,
+                54px
+            );
+
+        letter-spacing:
+            -2px;
+    }
+
+    .hero p {
+        max-width:
+            340px;
+
+        margin:
+            20px auto 28px;
+
+        font-size:
+            14px;
+
+        line-height:
+            1.65;
+    }
+
+    .hero-buttons,
+    .hero-actions {
+        width:
+            100%;
+
+        flex-direction:
+            column;
+
+        gap:
+            10px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width:
+            100%;
+
+        min-height:
+            54px;
+
+        font-size:
+            13px;
+    }
+
+
+    /* DOCUMENTOS */
+
+    .documents-section {
+        width:
+            90%;
+
+        padding:
+            60px 0;
+    }
+
+    .toolbar {
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+    }
+
+    .toolbar-actions {
+        width:
+            100%;
+    }
+
+    .toolbar-actions button {
+        flex:
+            1;
+    }
+
+    .doc-toggle {
+        min-height:
+            72px;
+
+        grid-template-columns:
+            44px
+            minmax(0, 1fr)
+            36px;
+
+        gap:
+            12px;
+
+        padding:
+            12px;
+    }
+
+    .doc-number {
+        width:
+            42px;
+
+        height:
+            42px;
+
+        border-radius:
+            11px;
+
+        font-size:
+            11px;
+    }
+
+    .doc-title {
+        font-size:
+            13px;
+    }
+
+    .doc-title small {
+        font-size:
+            9px;
+    }
+
+    .doc-icon {
+        width:
+            34px;
+
+        height:
+            34px;
+
+        font-size:
+            19px;
+    }
+
+    .doc-body {
+        padding:
+            0 15px 25px 68px;
+
+        font-size:
+            12px;
+
+        line-height:
+            1.7;
+    }
+
+    .legal-box {
+        padding:
+            18px;
+    }
+
+    .legal-tag {
+        font-size:
+            9px;
+    }
+
+
+    /* AJUDA */
+
+    .help-section {
+        width:
+            90%;
+
+        padding:
+            25px;
+
+        margin-bottom:
+            50px;
+
+        border-radius:
+            18px;
+    }
+
+    .help-content {
+        gap:
+            18px;
+    }
+
+    .help-icon {
+        width:
+            58px;
+
+        height:
+            58px;
+
+        border-radius:
+            15px;
+
+        font-size:
+            27px;
+    }
+
+    .help-text h2 {
+        font-size:
+            22px;
+    }
+
+    .help-text p {
+        font-size:
+            12px;
+
+        line-height:
+            1.7;
+    }
+
+    .whatsapp-button {
+        width:
+            100%;
+
+        min-height:
+            52px;
+
+        justify-content:
+            center;
+
+        font-size:
+            12px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-container,
+    .footer-inner {
+        width:
+            90%;
+
+        padding:
+            45px 0;
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            30px;
+
+        text-align:
+            center;
+    }
+
+    .footer-brand p {
+        margin:
+            10px auto 0;
+    }
+
+    .footer-contact p {
+        font-size:
+            12px;
+    }
+
+    .footer-bottom {
+        padding:
+            18px;
+
+        font-size:
+            10px;
+
+        line-height:
+            1.6;
+    }
+
+
+    /* WHATSAPP FLUTUANTE */
+
+    .floating-whatsapp {
+        right:
+            17px;
+
+        bottom:
+            17px;
+
+        width:
+            55px;
+
+        height:
+            55px;
+
+        font-size:
+            24px;
+    }
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .doc-toggle {
+        grid-template-columns:
+            38px
+            minmax(0, 1fr)
+            32px;
+
+        gap:
+            8px;
+    }
+
+    .doc-number {
+        width:
+            36px;
+
+        height:
+            36px;
+    }
+
+    .doc-icon {
+        width:
+            30px;
+
+        height:
+            30px;
+
+        font-size:
+            17px;
+    }
+
+    .doc-title {
+        font-size:
+            12px;
+    }
+
+    .doc-body {
+        padding-left:
+            56px;
+    }
+}
+
+/* =========================================================
+   AJUSTES FINAIS DE LAYOUT
+   Corrige largura, espaçamento e alinhamento da página.
+========================================================= */
+
+.page {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.documents-section {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    padding: 78px 0 90px;
+}
+
+.documents {
+    width: 100%;
+}
+
+/* Evita que o título do card fique esmagado */
+.doc-title {
+    overflow-wrap: anywhere;
+}
+
+/* Área de ajuda: nomes alinhados ao HTML */
+.help-content {
+    width: 100%;
+}
+
+.help-text {
+    min-width: 0;
+}
+
+/* Pequeno refinamento do hero */
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Busca mais elegante */
+.search-box input {
+    min-height: 46px;
+}
+
+.search-box button {
+    white-space: nowrap;
+}
+
+/* =========================================================
+   TABLET / CELULAR - CORREÇÃO DA SEÇÃO DE DOCUMENTOS
+========================================================= */
+
+@media (max-width: 900px) {
+    .documents-section {
+        width: 92%;
+        padding: 65px 0 75px;
+    }
+}
+
+@media (max-width: 600px) {
+    .documents-section {
+        width: 90%;
+        padding: 55px 0 65px;
+    }
+
+    .search-box {
+        gap: 5px;
+    }
+
+    .search-box > i {
+        margin-left: 10px;
+    }
+
+    .search-box input {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 420px) {
+    .documents-section {
+        width: 92%;
+    }
+
+    .toolbar-actions {
+        gap: 6px;
+    }
+
+    .toolbar-actions button {
+        padding: 0 9px;
+        font-size: 9px;
+    }
+}
+
+
+/* =========================================================
+   PADRÃO VISUAL DO PORTAL
+   Documentos acompanha a mesma identidade de Certidões.
+========================================================= */
+
+.hero {
+    min-height: 610px;
+    padding: 72px 20px 78px;
+}
+
+.hero-content {
+    max-width: 1050px;
+}
+
+.hero-icon {
+    width: 108px;
+    height: 108px;
+    margin: 0 auto 28px;
+    border-radius: 28px;
+    background: #050705;
+    color: var(--verde);
+    font-size: 46px;
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.14),
+        0 0 0 1px rgba(56, 186, 94, 0.04);
+}
+
+.hero h1 {
+    max-width: 1000px;
+    margin: 8px auto 0;
+    font-size: clamp(52px, 5.6vw, 76px);
+    line-height: 1.02;
+    letter-spacing: -3.5px;
+}
+
+.hero p {
+    max-width: 790px;
+    margin: 26px auto 30px;
+    font-size: 18px;
+    line-height: 1.65;
+}
+
+/* A busca continua sendo exclusiva de Documentos,
+   mas recebe o mesmo acabamento visual do portal. */
+.search-box {
+    width: min(880px, 100%);
+    margin: 32px auto 0;
+    min-height: 64px;
+    padding: 7px;
+    border-radius: 14px;
+    box-shadow:
+        0 14px 35px rgba(0, 0, 0, 0.07),
+        0 0 0 1px rgba(56, 186, 94, 0.02);
+}
+
+.search-box input {
+    height: 48px;
+    font-size: 14px;
+}
+
+.search-box button {
+    min-height: 48px;
+    padding: 0 16px;
+    border-radius: 10px;
+    font-size: 11px;
+}
+
+/* A seção dos documentos começa limpa, como as demais páginas. */
+.documents-section {
+    padding-top: 68px;
+}
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 900px) {
+    .hero {
+        min-height: 570px;
+        padding: 62px 20px 70px;
+    }
+
+    .hero-icon {
+        width: 94px;
+        height: 94px;
+        border-radius: 24px;
+        font-size: 40px;
+    }
+
+    .hero h1 {
+        font-size: clamp(46px, 8vw, 68px);
+        letter-spacing: -2.5px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        min-height: 535px;
+        padding: 55px 18px 60px;
+    }
+
+    .hero-icon {
+        width: 78px;
+        height: 78px;
+        margin-bottom: 22px;
+        border-radius: 20px;
+        font-size: 32px;
+    }
+
+    .hero-label,
+    .eyebrow {
+        font-size: 9px;
+        letter-spacing: 2.5px;
+    }
+
+    .hero h1 {
+        max-width: 360px;
+        font-size: clamp(40px, 12vw, 54px);
+        line-height: 1.04;
+        letter-spacing: -2px;
+    }
+
+    .hero p {
+        max-width: 350px;
+        margin: 20px auto 26px;
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .search-box {
+        min-height: 58px;
+        margin-top: 26px;
+        padding: 6px;
+    }
+
+    .search-box input {
+        height: 44px;
+        font-size: 12px;
+    }
+
+    .search-box button {
+        min-height: 44px;
+        padding: 0 12px;
+        font-size: 10px;
+    }
+
+    .documents-section {
+        padding-top: 52px;
+    }
+}

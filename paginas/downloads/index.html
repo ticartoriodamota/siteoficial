@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Downloads de formulários, modelos e requerimentos do Cartório da Mota."
+    >
+
+    <title>Downloads | Cartório da Mota</title>
+
+    <!-- =========================================================
+         FONTES
+    ========================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- =========================================================
+         FONT AWESOME
+    ========================================================== -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    >
+
+    <!-- =========================================================
+         CSS DO HEADER UNIVERSAL DA MATRIZ
+    ========================================================== -->
+    <link rel="stylesheet" href="../../css/header.css">
+
+    <!-- =========================================================
+         CSS DA PÁGINA
+    ========================================================== -->
+    <link rel="stylesheet" href="downloads.css">
+
+    <!-- COMPONENTES UNIVERSAIS -->
+    <link rel="stylesheet" href="../../css/help.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/flutuante-universal.css">
+
+    
+
+    <!-- =========================================================
+         VÍDEO PRINCIPAL DA MATRIZ
+         Mantido no mesmo caminho utilizado pelo site principal.
+    ========================================================== -->
+    <link
+        rel="preload"
+        href="../../videos/cartori.mp4"
+        as="video"
+        type="video/mp4"
+    >
+</head>
+
+
+<body>
+
+    <!-- =========================================================
+         HEADER UNIVERSAL
+         Carregado pelo components.js da matriz.
+    ========================================================== -->
+
+    <div id="site-header"></div>
+
+
+    <!-- =========================================================
+         CONTEÚDO PRINCIPAL
+    ========================================================== -->
+
+    <main class="page">
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="hero-icon" aria-hidden="true">
+                    <i class="fa-solid fa-download"></i>
+                </div>
+
+                <span class="eyebrow">
+                    SERVIÇOS ONLINE
+                </span>
+
+                <h1>
+                    Downloads
+                </h1>
+
+                <p>
+                    Acesse e baixe formulários, modelos, requerimentos
+                    e outros documentos disponibilizados pelo Cartório da Mota.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ÁREA DE DOWNLOADS
+        ====================================================== -->
+
+        <section class="downloads-section">
+
+            <div class="section-header">
+
+                <span>
+                    DOCUMENTOS E FORMULÁRIOS
+                </span>
+
+                <h2>
+                    Encontre o documento que você precisa
+                </h2>
+
+                <p>
+                    Selecione uma das opções abaixo para acessar
+                    os documentos disponíveis para download.
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 BARRA DE PESQUISA
+            ================================================== -->
+
+            <div class="search-box">
+
+                <i
+                    class="fa-solid fa-magnifying-glass"
+                    aria-hidden="true"
+                ></i>
+
+                <input
+                    type="search"
+                    id="downloadSearch"
+                    placeholder="Pesquisar formulário, modelo ou requerimento..."
+                    autocomplete="off"
+                    aria-label="Pesquisar downloads"
+                >
+
+                <button
+                    type="button"
+                    id="clearSearch"
+                    aria-label="Limpar pesquisa"
+                >
+                    <i
+                        class="fa-solid fa-xmark"
+                        aria-hidden="true"
+                    ></i>
+
+                    Limpar
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 LISTA DE DOWNLOADS
+            ================================================== -->
+
+            <div
+                class="downloads-grid"
+                id="downloadsList"
+            >
+
+                <!-- =============================================
+                     CARD 01
+                ============================================== -->
+
+                <article
+                    class="download-card"
+                    data-search="requerimentos requerimento formularios"
+                >
+
+                    <div class="download-icon">
+                        <i class="fa-solid fa-file-signature"></i>
+                    </div>
+
+                    <div class="download-content">
+
+                        <span class="download-label">
+                            REQUERIMENTOS
+                        </span>
+
+                        <h3>
+                            Requerimentos
+                        </h3>
+
+                        <p>
+                            Formulários e requerimentos utilizados
+                            para solicitação de serviços.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="#"
+                        class="download-button"
+                        aria-label="Acessar requerimentos"
+                    >
+                        <span>Acessar</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </article>
+
+
+                <!-- =============================================
+                     CARD 02
+                ============================================== -->
+
+                <article
+                    class="download-card"
+                    data-search="modelos modelos documentos"
+                >
+
+                    <div class="download-icon">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+
+                    <div class="download-content">
+
+                        <span class="download-label">
+                            MODELOS
+                        </span>
+
+                        <h3>
+                            Modelos de Documentos
+                        </h3>
+
+                        <p>
+                            Modelos disponibilizados para facilitar
+                            o preenchimento dos documentos.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="#"
+                        class="download-button"
+                        aria-label="Acessar modelos de documentos"
+                    >
+                        <span>Acessar</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </article>
+
+
+                <!-- =============================================
+                     CARD 03
+                ============================================== -->
+
+                <article
+                    class="download-card"
+                    data-search="formularios formulario"
+                >
+
+                    <div class="download-icon">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                    </div>
+
+                    <div class="download-content">
+
+                        <span class="download-label">
+                            FORMULÁRIOS
+                        </span>
+
+                        <h3>
+                            Formulários
+                        </h3>
+
+                        <p>
+                            Formulários necessários para diferentes
+                            serviços e procedimentos do cartório.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="#"
+                        class="download-button"
+                        aria-label="Acessar formulários"
+                    >
+                        <span>Acessar</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </article>
+
+
+                <!-- =============================================
+                     CARD 04
+                ============================================== -->
+
+                <article
+                    class="download-card"
+                    data-search="outros documentos arquivos downloads"
+                >
+
+                    <div class="download-icon">
+                        <i class="fa-solid fa-folder-open"></i>
+                    </div>
+
+                    <div class="download-content">
+
+                        <span class="download-label">
+                            DOCUMENTOS
+                        </span>
+
+                        <h3>
+                            Outros Documentos
+                        </h3>
+
+                        <p>
+                            Consulte outros arquivos e documentos
+                            disponibilizados pelo Cartório da Mota.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="#"
+                        class="download-button"
+                        aria-label="Acessar outros documentos"
+                    >
+                        <span>Acessar</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </article>
+
+            </div>
+
+
+            <!-- =================================================
+                 ESTADO SEM RESULTADOS
+            ================================================== -->
+
+            <div
+                class="empty-state"
+                id="emptyState"
+                hidden
+            >
+
+                <i
+                    class="fa-solid fa-folder-open"
+                    aria-hidden="true"
+                ></i>
+
+                <h3>
+                    Nenhum documento encontrado
+                </h3>
+
+                <p>
+                    Tente pesquisar por outro termo.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    <!-- BARRA UNIVERSAL DE AJUDA -->
+
+    <div id="site-help"></div>    
+
+    <!-- FOOTER UNIVERSAL -->
+
+    <div id="site-footer"></div>
+<!-- =========================================================
+         COMPONENTES GLOBAIS DA MATRIZ
+         Header universal + comportamentos globais.
+    ========================================================== -->
+
+    <script src="../../js/components.js"></script>
+
+
+    <!-- =========================================================
+         JAVASCRIPT ESPECÍFICO DA PÁGINA
+    ========================================================== -->
+
+    <script src="downloads.js"></script>
+
+</body>

@@ -1,0 +1,860 @@
+/* =========================================================
+   ÁREA RESTRITA - CARTÓRIO DA MOTA
+   CSS ESPECÍFICO DA PÁGINA
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   RESET DA PÁGINA
+========================================================= */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: hidden !important;
+}
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+
+    background: #eef5f1 !important;
+}
+
+
+/* =========================================================
+   ÁREA PRINCIPAL
+========================================================= */
+
+.area-restrita {
+    position: fixed !important;
+
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    min-height: 100vh !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+
+    overflow: hidden !important;
+
+    z-index: 9999;
+}
+
+
+/* =========================================================
+   PAINEL ESQUERDO
+========================================================= */
+
+.area-brand {
+    position: relative;
+
+    width: 50%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 70px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(53, 199, 101, 0.18),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #001b0d 0%,
+            #002a15 55%,
+            #00180b 100%
+        );
+}
+
+
+/* =========================================================
+   DECORAÇÕES
+========================================================= */
+
+.area-brand::before {
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    top: -350px;
+    left: -320px;
+
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.20);
+}
+
+.area-brand::after {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -300px;
+    bottom: -300px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(53, 199, 101, 0.14);
+}
+
+
+/* =========================================================
+   CONTEÚDO ESQUERDO
+========================================================= */
+
+.brand-content {
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+
+    max-width: 560px;
+}
+
+
+/* =========================================================
+   ÍCONE
+========================================================= */
+
+.brand-icon {
+    width: 82px;
+    height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 30px;
+
+    border-radius: 22px;
+
+    background: rgba(0, 0, 0, 0.20);
+
+    border: 1px solid rgba(53, 199, 101, 0.45);
+
+    color: #35c765;
+
+    font-size: 32px;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.brand-label {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #35c765;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.area-brand h1 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(65px, 7vw, 105px);
+
+    font-weight: 300;
+
+    line-height: 0.88;
+
+    letter-spacing: -5px;
+}
+
+.area-brand h1 strong {
+    display: block;
+
+    color: #35c765;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   DESCRIÇÃO
+========================================================= */
+
+.area-brand > .brand-content > p {
+    max-width: 470px;
+
+    margin: 35px 0 0;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 18px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   SEGURANÇA ESQUERDA
+========================================================= */
+
+.brand-security {
+    width: fit-content;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 35px;
+
+    padding: 12px 18px;
+
+    border-radius: 12px;
+
+    background: rgba(0, 0, 0, 0.20);
+
+    border: 1px solid rgba(53, 199, 101, 0.20);
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 13px;
+}
+
+.brand-security i {
+    color: #35c765;
+}
+
+
+/* =========================================================
+   DECORAÇÕES HTML
+========================================================= */
+
+.brand-decoration {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.decoration-one {
+    width: 400px;
+    height: 400px;
+
+    top: -300px;
+    right: -250px;
+
+    background: rgba(53, 199, 101, 0.05);
+}
+
+.decoration-two {
+    width: 300px;
+    height: 300px;
+
+    right: -180px;
+    bottom: -180px;
+
+    border: 1px solid rgba(53, 199, 101, 0.12);
+}
+
+.decoration-three {
+    width: 180px;
+    height: 180px;
+
+    right: -80px;
+    bottom: -80px;
+
+    border: 1px solid rgba(53, 199, 101, 0.10);
+}
+
+
+/* =========================================================
+   PAINEL DIREITO
+========================================================= */
+
+.login-section {
+    width: 50%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 50px;
+
+    overflow: hidden;
+
+    background: #f1f7f4;
+}
+
+
+/* =========================================================
+   CONTAINER LOGIN
+========================================================= */
+
+.login-container {
+    width: 100%;
+
+    max-width: 470px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.login-heading > span {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #168b43;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+}
+
+
+.login-heading h2 {
+    margin: 0;
+
+    color: #050806;
+
+    font-size: clamp(42px, 4vw, 58px);
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+
+.login-heading p {
+    margin: 20px 0 35px;
+
+    color: #65736c;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FORMULÁRIO
+========================================================= */
+
+.login-form {
+    width: 100%;
+}
+
+
+/* =========================================================
+   GRUPO
+========================================================= */
+
+.input-group {
+    width: 100%;
+
+    margin-bottom: 20px;
+}
+
+
+.input-group label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #111512;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.input-wrapper {
+    width: 100%;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    border: 1px solid #d8e4de;
+
+    border-radius: 15px;
+
+    background: #ffffff;
+
+    transition: 0.25s ease;
+}
+
+
+.input-wrapper:focus-within {
+    border-color: #35c765;
+
+    box-shadow:
+        0 0 0 4px rgba(53, 199, 101, 0.10);
+}
+
+
+.input-wrapper > i {
+    width: 58px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #82918a;
+
+    font-size: 17px;
+}
+
+
+.input-wrapper input {
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+
+    padding: 0 10px 0 0;
+
+    border: 0 !important;
+    outline: none !important;
+
+    background: transparent !important;
+
+    color: #111512;
+
+    font-family: inherit;
+
+    font-size: 15px;
+}
+
+
+.input-wrapper input::placeholder {
+    color: #9aa8a2;
+}
+
+
+/* =========================================================
+   OLHO DA SENHA
+========================================================= */
+
+.toggle-password {
+    width: 55px;
+    height: 100%;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #7c8b84;
+
+    cursor: pointer;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   OPÇÕES
+========================================================= */
+
+.login-options {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin: 6px 0 25px;
+}
+
+
+.remember {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: #68766f;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+
+.remember input {
+    width: 17px;
+    height: 17px;
+
+    accent-color: #35c765;
+}
+
+
+.forgot-password {
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #168b43;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   MENSAGEM
+========================================================= */
+
+.login-message {
+    display: none;
+
+    width: 100%;
+
+    margin-bottom: 15px;
+
+    padding: 13px 16px;
+
+    border-radius: 12px;
+
+    background: #fff0f0;
+
+    color: #c62828;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.login-message.show {
+    display: block;
+}
+
+
+/* =========================================================
+   BOTÃO ENTRAR
+========================================================= */
+
+.login-button {
+    width: 100%;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 24px;
+
+    border: 0;
+
+    border-radius: 15px;
+
+    background: #35c765;
+
+    color: #061109;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+
+.login-button:hover {
+    background: #2eb357;
+
+    transform: translateY(-2px);
+}
+
+
+.login-button i {
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   SEGURANÇA
+========================================================= */
+
+.login-security {
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 14px;
+
+    margin-top: 25px;
+
+    padding: 16px;
+
+    border: 1px solid #dce8e2;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.55);
+}
+
+
+.login-security > i {
+    color: #35c765;
+
+    font-size: 20px;
+}
+
+
+.login-security strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #18201c;
+
+    font-size: 13px;
+}
+
+
+.login-security p {
+    margin: 0;
+
+    color: #7a8882;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   VOLTAR
+========================================================= */
+
+.back-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 22px;
+
+    color: #168b43;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+.back-home:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .area-brand {
+        width: 43%;
+
+        padding: 45px;
+    }
+
+    .login-section {
+        width: 57%;
+
+        padding: 40px;
+    }
+
+    .area-brand h1 {
+        font-size: 70px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 760px) {
+
+    html,
+    body {
+        height: auto;
+
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+
+    .area-restrita {
+        position: relative !important;
+
+        width: 100% !important;
+        height: auto !important;
+
+        min-height: 100vh !important;
+
+        display: block !important;
+
+        overflow: visible !important;
+    }
+
+    .area-brand {
+        width: 100%;
+        height: auto;
+
+        min-height: 430px;
+
+        padding: 50px 30px;
+    }
+
+    .login-section {
+        width: 100%;
+        height: auto;
+
+        min-height: 600px;
+
+        padding: 50px 25px;
+    }
+
+    .area-brand h1 {
+        font-size: 65px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .area-brand {
+        min-height: 390px;
+
+        padding: 35px 24px;
+    }
+
+    .login-section {
+        padding: 40px 20px;
+    }
+
+    .brand-icon {
+        width: 70px;
+        height: 70px;
+
+        margin-bottom: 25px;
+    }
+
+    .area-brand h1 {
+        font-size: 54px;
+
+        letter-spacing: -3px;
+    }
+
+    .area-brand > .brand-content > p {
+        margin-top: 28px;
+
+        font-size: 15px;
+    }
+
+    .login-heading h2 {
+        font-size: 40px;
+    }
+
+    .login-options {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 14px;
+    }
+
+}
