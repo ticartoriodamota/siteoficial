@@ -1,0 +1,176 @@
+/* =========================================================
+   CARTÓRIO DA MOTA
+   BARRA UNIVERSAL "FICOU COM ALGUMA DÚVIDA?"
+========================================================= */
+
+.help-section {
+    width: min(1100px, 92%);
+    margin: 0 auto 80px;
+    padding: 35px;
+
+    border-radius: 22px;
+
+    background:
+        radial-gradient(
+            circle at 10% 0%,
+            rgba(56, 186, 94, 0.25),
+            transparent 35%
+        ),
+        #050705;
+
+    color: #ffffff;
+}
+
+.help-content {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.help-icon {
+    width: 70px;
+    height: 70px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: #38BA5E;
+    color: #050705;
+
+    font-size: 34px;
+}
+
+.help-text {
+    flex: 1;
+}
+
+.help-text span {
+    color: #38BA5E;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.help-text h2 {
+    margin-top: 4px;
+
+    color: #ffffff;
+
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.help-text p {
+    max-width: 600px;
+
+    margin-top: 5px;
+
+    color: #aeb8b2;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.whatsapp-button {
+    padding: 15px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: #38BA5E;
+    color: #050705;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background: #ffffff;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .help-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .whatsapp-button {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .help-section {
+        width: 90%;
+        padding: 25px;
+
+        margin-bottom: 50px;
+
+        border-radius: 18px;
+    }
+
+    .help-content {
+        gap: 18px;
+    }
+
+    .help-icon {
+        width: 58px;
+        height: 58px;
+
+        border-radius: 15px;
+
+        font-size: 27px;
+    }
+
+    .help-text h2 {
+        font-size: 22px;
+    }
+
+    .help-text p {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .whatsapp-button {
+        width: 100%;
+        min-height: 52px;
+
+        font-size: 12px;
+    }
+
+}
