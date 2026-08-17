@@ -990,3 +990,313 @@
 
     outline-offset: 3px !important;
 }
+/* =========================================================
+   CORREÇÃO FINAL DO HEADER MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    /* Mantém somente o header real */
+    #site-header {
+        width: 100% !important;
+        height: 160px !important;
+        min-height: 160px !important;
+        overflow: hidden !important;
+        position: relative !important;
+    }
+
+
+    /* Header principal */
+    #site-header > header,
+    #site-header .header,
+    #site-header .header-universal {
+
+        width: 100% !important;
+
+        height: 160px !important;
+        min-height: 160px !important;
+
+        padding: 5px 10px !important;
+
+        margin: 0 !important;
+
+        position: relative !important;
+
+        overflow: hidden !important;
+
+        background:
+            linear-gradient(
+                135deg,
+                #020403 0%,
+                #050806 50%,
+                #020403 100%
+            ) !important;
+    }
+
+
+    /* =====================================================
+       REMOVE ELEMENTOS DE MENU/CAIXAS VAZIAS
+    ===================================================== */
+
+    #site-header nav,
+    #site-header .nav,
+    #site-header .menu,
+    #site-header .nav-menu,
+    #site-header .navbar,
+    #site-header .navbar-menu,
+    #site-header .header-menu,
+    #site-header .mobile-menu,
+    #site-header .mobile-nav,
+    #site-header .menu-container {
+
+        display: none !important;
+
+        width: 0 !important;
+        height: 0 !important;
+
+        min-width: 0 !important;
+        min-height: 0 !important;
+
+        max-width: 0 !important;
+        max-height: 0 !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+
+        border: 0 !important;
+
+        background: transparent !important;
+
+        box-shadow: none !important;
+
+        overflow: hidden !important;
+    }
+
+
+    /* =====================================================
+       REMOVE QUALQUER CAIXA VAZIA ENTRE LOGO E CONTATOS
+    ===================================================== */
+
+    #site-header .header-top > div:not(
+        .header-logo
+    ):not(
+        .main-logo
+    ):not(
+        .header-contact
+    ):not(
+        .contact-item
+    ) {
+
+        background: transparent !important;
+
+        border: 0 !important;
+
+        box-shadow: none !important;
+    }
+
+
+    /* =====================================================
+       LOGO
+    ===================================================== */
+
+    #site-header .header-logo,
+    #site-header .main-logo {
+
+        width: 210px !important;
+        height: 100px !important;
+
+        position: absolute !important;
+
+        top: 5px !important;
+        left: 50% !important;
+
+        transform: translateX(-50%) !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        background: transparent !important;
+
+        border: 0 !important;
+
+        box-shadow: none !important;
+
+        z-index: 50 !important;
+    }
+
+
+    #site-header .header-logo img,
+    #site-header .main-logo img,
+    #site-header img {
+
+        width: 190px !important;
+        height: 95px !important;
+
+        max-width: 190px !important;
+        max-height: 95px !important;
+
+        object-fit: contain !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        background: transparent !important;
+
+        border: 0 !important;
+
+        box-shadow: none !important;
+    }
+
+
+    /* =====================================================
+       CONTATOS
+    ===================================================== */
+
+    #site-header .header-contact,
+    #site-header .contact-item {
+
+        position: absolute !important;
+
+        top: 108px !important;
+
+        width: calc(50% - 18px) !important;
+
+        height: 42px !important;
+        min-height: 42px !important;
+
+        padding: 4px 6px !important;
+
+        margin: 0 !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+
+        gap: 6px !important;
+
+        border-radius: 11px !important;
+
+        z-index: 40 !important;
+    }
+
+
+    #site-header .header-phone {
+
+        left: 10px !important;
+
+        right: auto !important;
+    }
+
+
+    #site-header .header-whatsapp {
+
+        right: 10px !important;
+
+        left: auto !important;
+    }
+
+
+    /* =====================================================
+       REMOVE QUALQUER RETÂNGULO CENTRAL
+       ===================================================== */
+
+    #site-header .header-top::before,
+    #site-header .header-top::after {
+
+        display: none !important;
+
+        content: none !important;
+    }
+
+
+    /* =====================================================
+       BRILHO DO HEADER
+       ===================================================== */
+
+    #site-header > header::before,
+    #site-header .header::before,
+    #site-header .header-universal::before {
+
+        pointer-events: none !important;
+
+        z-index: 0 !important;
+    }
+
+
+    #site-header > header::after,
+    #site-header .header::after,
+    #site-header .header-universal::after {
+
+        pointer-events: none !important;
+
+        z-index: 1 !important;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    #site-header,
+    #site-header > header,
+    #site-header .header,
+    #site-header .header-universal {
+
+        height: 150px !important;
+        min-height: 150px !important;
+    }
+
+
+    #site-header .header-logo,
+    #site-header .main-logo {
+
+        width: 190px !important;
+        height: 90px !important;
+
+        top: 5px !important;
+    }
+
+
+    #site-header .header-logo img,
+    #site-header .main-logo img,
+    #site-header img {
+
+        width: 175px !important;
+        height: 85px !important;
+
+        max-width: 175px !important;
+        max-height: 85px !important;
+    }
+
+
+    #site-header .header-contact,
+    #site-header .contact-item {
+
+        top: 100px !important;
+
+        height: 39px !important;
+        min-height: 39px !important;
+
+        width: calc(50% - 14px) !important;
+    }
+
+
+    #site-header .header-phone {
+        left: 7px !important;
+    }
+
+
+    #site-header .header-whatsapp {
+        right: 7px !important;
+    }
+
+}
